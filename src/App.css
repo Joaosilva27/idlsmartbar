@@ -1,38 +1,90 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #0d406a;
+  color: #f4f4f4;
+  font-family: "Helvetica Condensed", sans-serif;
+  font-style: italic;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.IDL__Logo {
+  width: 7rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.TV__Logo {
+  width: 7rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Smartbar__Logo {
+  font-family: "Gotham";
+}
+
+.App__room {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 85vh;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.App__centered {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  text-align: center;
+  width: 200px;
+  height: 200px;
+  margin: 10px; /* Add some margin between items */
+}
+
+.App__Room--Name {
+  font-family: "Helvetica Condensed";
+  font-weight: bold;
+}
+
+.App__input {
+  margin-top: 1rem;
+  outline: none;
+  border: 2px solid #1b171c; /* ID Logistics blue color */
+  border-radius: 5px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  padding: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.App__button {
+  margin-top: 1rem;
+  border-radius: 5px;
+  width: 180px;
+  height: 60px;
+  cursor: pointer;
+  background: transparent;
+  border: 2px solid #1b171c;
+  outline: none;
+  transition: 1s ease-in-out;
+  color: #ef3342;
+}
+
+.App__button:hover {
+  transition: 1s ease-in-out;
+  background: #fefefe;
+}
+
+.App__button:hover svg {
+  stroke-dashoffset: -480;
+}
+
+.App__button span {
   color: white;
+  font-size: 18px;
+  font-weight: 100;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sign__out {
+  display: inline-block;
+  position: sticky;
+  top: 0;
 }

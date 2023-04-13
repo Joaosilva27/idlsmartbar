@@ -1,0 +1,100 @@
+.chat {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: sans-serif;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 2px solid #3b5998;
+}
+.header {
+  background-color: #3b5998;
+  color: white;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.messages {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  height: 90%;
+  overflow-y: auto;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.message {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  overflow-y: scroll;
+}
+
+.user {
+  font-weight: bold;
+  margin-right: 10px;
+  color: #333;
+}
+
+.new__message__form {
+  margin-top: 2rem;
+  bottom: 1.5rem;
+}
+
+.new__message__input {
+  outline: none;
+  border: 2px solid #1b171c; /* ID Logistics blue color */
+  border-radius: 5px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  padding: 10px;
+  height: 60px;
+  width: 30rem;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+
+.Chat__message {
+  margin-bottom: 3px;
+  align-self: flex-start;
+  margin-left: 30%;
+}
+
+.Chat__room--title {
+  color: #ef3342;
+}
+
+.signOut--sendMessage__button {
+  border-radius: 5px;
+  width: 6rem;
+  height: 60px;
+  cursor: pointer;
+  background: transparent;
+  border: 2px solid #1b171c;
+  outline: none;
+  transition: 1s ease-in-out;
+  color: #ef3342;
+}
+
+.signOut--sendMessage__button:hover {
+  transition: 1s ease-in-out;
+  background: #fefefe;
+}
+
+.send__message__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  bottom: 0;
+}
