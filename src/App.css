@@ -88,3 +88,28 @@
   position: sticky;
   top: 0;
 }
+
+.tv__guide {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  width: 6rem;
+  height: 60px;
+  cursor: pointer;
+  background: transparent;
+  border: 2px solid #1b171c;
+  outline: none;
+  transition: 1s ease-in-out;
+  color: #fefefe;
+  text-decoration: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.tv__guide:hover {
+  transition: 1s ease-in-out;
+  background: #ef3342;
+}

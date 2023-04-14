@@ -5,6 +5,8 @@ import IDLogo from "./images/IDLogo.png";
 import TVicon from "./images/TVicon.png";
 import { signOut } from "firebase/auth";
 import { auth } from "./firebase-config";
+import { Route, Routes, Link } from "react-router-dom";
+import CalibrationGuide from "./components/CalibrationGuide";
 
 import Cookies from "universal-cookie";
 import { useState, useRef } from "react";
@@ -37,37 +39,55 @@ function App() {
 
   return (
     <>
-      <div className='sign__out'>
-        <button className='signOut--sendMessage__button' onClick={signUserOut}>
-          Sign Out
-        </button>
-        {room ? (
-          <button onClick={handleGoToHome} className='signOut--sendMessage__button'>
-            Home
-          </button>
-        ) : null}
-      </div>
+      <Routes>
+        <Route
+          exact
+          path='/'
+          element={
+            <>
+              <div className='sign__out'>
+                <button className='signOut--sendMessage__button' onClick={signUserOut}>
+                  Sign Out
+                </button>
+                {room ? (
+                  <button onClick={handleGoToHome} className='signOut--sendMessage__button'>
+                    Home
+                  </button>
+                ) : null}
+              </div>
+              <div>
+                <div className='calibration__button--div'>
+                  <Link className='tv__guide' to='/calibration-guide'>
+                    Calibration Guide
+                  </Link>
+                </div>
+              </div>
 
-      {room ? (
-        <Chat room={room} />
-      ) : (
-        <div className='App__room'>
-          <img alt='Logo for IDLogistics' className='IDL__Logo' src={IDLogo} />
-          <img alt='TV Icon' className='TV__Logo' src={TVicon} />
+              {room ? (
+                <Chat room={room} />
+              ) : (
+                <div className='App__room'>
+                  <img alt='Logo for IDLogistics' className='IDL__Logo' src={IDLogo} />
+                  <img alt='TV Icon' className='TV__Logo' src={TVicon} />
 
-          <div className='App__centered'>
-            <form>
-              <label className='App__Room--Name'>Enter room name:</label>
-              <br></br>
-              <input spellCheck='false' className='App__input' ref={roomInputRef} />
-              <br></br>
-              <button className='App__button' onClick={() => setRoom(roomInputRef.current.value)}>
-                Enter Chat
-              </button>
-            </form>
-          </div>
-        </div>
-      )}
+                  <div className='App__centered'>
+                    <form>
+                      <label className='App__Room--Name'>Enter room name:</label>
+                      <br></br>
+                      <input spellCheck='false' className='App__input' ref={roomInputRef} />
+                      <br></br>
+                      <button className='App__button' onClick={() => setRoom(roomInputRef.current.value)}>
+                        Enter Chat
+                      </button>
+                    </form>
+                  </div>
+                </div>
+              )}
+            </>
+          }
+        />
+        <Route path='/calibration-guide' element={<CalibrationGuide />} />
+      </Routes>
     </>
   );
 }
