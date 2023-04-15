@@ -44,7 +44,7 @@ element::-webkit-scrollbar {
 }
 
 .App__Room--Name {
-  font-family: "Helvetica Condensed";
+  font-family: "Roboto", sans-serif;
   font-weight: bold;
 }
 

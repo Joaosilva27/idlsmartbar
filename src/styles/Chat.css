@@ -75,7 +75,7 @@ body {
 }
 
 .Chat__message {
-  margin-bottom: 3px;
+  margin-bottom: 0.7rem;
   align-self: flex-start;
   margin-left: 30%;
 }
