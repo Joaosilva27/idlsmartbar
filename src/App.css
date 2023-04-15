@@ -7,7 +7,7 @@ element::-webkit-scrollbar {
   box-sizing: border-box;
   background-color: #0d406a;
   color: #f4f4f4;
-  font-family: "Helvetica Condensed", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-style: italic;
 }
 

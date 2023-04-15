@@ -1,7 +1,42 @@
+p {
+  font-family: "Roboto", sans-serif;
+}
+
+.tv__icon {
+  width: 3rem;
+}
+
 .guide__container {
+  margin-top: 3rem;
   height: 100vh;
   flex-direction: column;
   display: flex;
-  justify-content: center;
   align-items: center;
+}
+
+.guide__flex {
+  display: flex;
+  margin: 2rem;
+}
+
+.guide__p {
+  margin-right: 2rem;
+  font-size: 1.1rem;
+}
+
+.calman__image {
+  width: 50vw;
+  border-radius: 1rem;
+}
+
+.guide__selector--title {
+  margin-top: 3.5rem;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.guide__selector--div {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
 }
