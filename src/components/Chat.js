@@ -39,7 +39,7 @@ export const Chat = props => {
       room,
     });
 
-    setNewMessage();
+    setNewMessage("");
   };
 
   return (
