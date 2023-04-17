@@ -7,6 +7,7 @@ import { signOut } from "firebase/auth";
 import { auth } from "./firebase-config";
 import { Route, Routes, Link } from "react-router-dom";
 import CalibrationGuide from "./components/CalibrationGuide";
+import { ManualGuide } from "./components/ManualGuide";
 
 import Cookies from "universal-cookie";
 import { useState, useRef } from "react";
@@ -87,6 +88,7 @@ function App() {
           }
         />
         <Route path='/calibration-guide' element={<CalibrationGuide signUserOut={signUserOut} />} />
+        <Route path='/calibration-guide/manual-guide' element={<ManualGuide />} />
       </Routes>
     </>
   );

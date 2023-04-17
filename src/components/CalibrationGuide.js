@@ -46,7 +46,9 @@ function CalibrationGuide({ signUserOut }) {
                 Automatic
               </button>
 
-              <button className='signOut--sendMessage__button'>Manual</button>
+              <Link to='/calibration-guide/manual-guide'>
+                <button className='signOut--sendMessage__button'>Manual</button>
+              </Link>
             </div>
           </div>
 

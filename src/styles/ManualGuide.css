@@ -1,0 +1,12 @@
+* {
+  margin: 1rem;
+}
+
+body {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.color__black {
+  color: black;
+}
