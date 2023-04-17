@@ -2,12 +2,16 @@ p {
   font-family: "Roboto", sans-serif;
 }
 
+.color__black {
+  color: black;
+}
+
 .tv__icon {
   width: 3rem;
 }
 
 .guide__container {
-  margin-top: 3rem;
+  margin-top: 1.5rem;
   height: 100vh;
   flex-direction: column;
   display: flex;

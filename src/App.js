@@ -86,7 +86,7 @@ function App() {
             </>
           }
         />
-        <Route path='/calibration-guide' element={<CalibrationGuide />} />
+        <Route path='/calibration-guide' element={<CalibrationGuide signUserOut={signUserOut} />} />
       </Routes>
     </>
   );
