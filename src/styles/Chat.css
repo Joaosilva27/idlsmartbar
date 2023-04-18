@@ -108,3 +108,8 @@ body {
   position: sticky;
   bottom: 0;
 }
+
+.profile__picture {
+  width: 1rem;
+  margin-right: 0.3rem;
+}

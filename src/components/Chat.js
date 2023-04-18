@@ -3,6 +3,7 @@ import { addDoc, collection, serverTimestamp, onSnapshot, query, where, orderBy 
 import { auth, db } from "../firebase-config";
 import "../styles/Chat.css";
 import notificationSound from "../sounds/message_sound.mp3";
+import DefaultProfilePicture from "../images/default_pfp.jpeg";
 
 export const Chat = props => {
   const { room } = props;
@@ -37,6 +38,7 @@ export const Chat = props => {
       text: newMessage,
       createdAt: serverTimestamp(),
       user: auth.currentUser.displayName,
+      profilePicture: auth.currentUser.photoURL,
       room,
     });
 
@@ -63,6 +65,11 @@ export const Chat = props => {
       <div ref={messagesRef} className='messages'>
         {messages.map(message => (
           <p className='Chat__message'>
+            {message.profilePicture ? (
+              <img className='profile__picture' referrerpolicy='no-referrer' src={message.profilePicture} alt={message.user} />
+            ) : (
+              <img className='profile__picture' src={DefaultProfilePicture} alt={message.user}></img>
+            )}
             {message.user} : {message.text}
           </p>
         ))}
