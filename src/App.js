@@ -8,6 +8,7 @@ import { auth } from "./firebase-config";
 import { Route, Routes, Link } from "react-router-dom";
 import CalibrationGuide from "./components/CalibrationGuide";
 import { ManualGuide } from "./components/ManualGuide";
+import { AutomaticGuide } from "./components/AutomaticGuide";
 
 import Cookies from "universal-cookie";
 import { useState, useRef } from "react";
@@ -89,6 +90,7 @@ function App() {
         />
         <Route path='/calibration-guide' element={<CalibrationGuide signUserOut={signUserOut} />} />
         <Route path='/calibration-guide/manual-guide' element={<ManualGuide signUserOut={signUserOut} />} />
+        <Route path='calibration-guide/automatic-guide' element={<AutomaticGuide signUserOut={signUserOut} />} />
       </Routes>
     </>
   );

@@ -1,7 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Route } from "react-router-dom";
-import { ManualGuide } from "./ManualGuide";
 import "../styles/CalibrationGuide.css";
 import CalibrationExample from "../images/calibrationexample.png";
 
@@ -42,9 +40,11 @@ function CalibrationGuide({ signUserOut }) {
             <h2 className='guide__selector--title'>Select the guide:</h2>
 
             <div className='guide__selector--div'>
-              <button className='signOut--sendMessage__button' style={{ marginRight: "1rem" }}>
-                Automatic
-              </button>
+              <Link to='/calibration-guide/automatic-guide'>
+                <button className='signOut--sendMessage__button' style={{ marginRight: "1rem" }}>
+                  Automatic
+                </button>
+              </Link>
 
               <Link to='/calibration-guide/manual-guide'>
                 <button className='signOut--sendMessage__button'>Manual</button>
