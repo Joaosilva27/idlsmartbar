@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { addDoc, collection, serverTimestamp, onSnapshot, query, where, orderBy } from "firebase/firestore";
 import { auth, db } from "../firebase-config";
 import "../styles/Chat.css";
+import notificationSound from "../sounds/message_sound.mp3";
 
 export const Chat = props => {
   const { room } = props;
@@ -41,6 +42,15 @@ export const Chat = props => {
 
     setNewMessage("");
   };
+
+  useEffect(() => {
+    const audio = new Audio(notificationSound);
+    const lastMessage = messages[messages.length - 1];
+
+    if (lastMessage && lastMessage.user !== auth.currentUser.displayName) {
+      audio.play();
+    }
+  }, [messages]);
 
   return (
     <div className='chat'>
