@@ -35,6 +35,7 @@ body {
   overflow-y: auto;
   padding: 10px;
   margin-bottom: 10px;
+  max-width: 77%;
 }
 
 .message {
