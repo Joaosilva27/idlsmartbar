@@ -48,7 +48,7 @@ export const Chat = props => {
           message: `${lastMessage.user}: ${lastMessage.text}`,
           duration: 5000,
           native: true,
-          icon: auth.currentUser.photoURL,
+          icon: lastMessage.profilePicture,
         });
       }
     }
