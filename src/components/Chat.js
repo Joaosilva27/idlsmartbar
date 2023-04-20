@@ -1,19 +1,22 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { addDoc, collection, serverTimestamp, onSnapshot, query, where, orderBy } from "firebase/firestore";
 import { auth, db } from "../firebase-config";
 import "../styles/Chat.css";
+import IDLogo from "../images/IDLogo.png";
 import notificationSound from "../sounds/message_sound.mp3";
+import addNotification from "react-push-notification";
 import DefaultProfilePicture from "../images/default_pfp.jpeg";
 
 export const Chat = props => {
   const { room } = props;
-  const [newMessage, setNewMessage] = useState();
+  const [newMessage, setNewMessage] = useState("");
   const [messages, setMessages] = useState([]);
 
-  const messagesRef = collection(db, "messages");
+  const messagesRef = useRef(null);
 
   useEffect(() => {
-    const queryMessages = query(messagesRef, where("room", "==", room), orderBy("createdAt"));
+    const queryMessages = query(collection(db, "messages"), where("room", "==", room), orderBy("createdAt"));
+
     const unsubscribe = onSnapshot(queryMessages, snapshot => {
       let messages = [];
       snapshot.forEach(doc => {
@@ -23,27 +26,12 @@ export const Chat = props => {
     });
 
     return () => unsubscribe();
-  }, []);
+  }, [room]);
 
   useEffect(() => {
     const messagesContainer = messagesRef.current;
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
-  }, [messagesRef]);
-
-  const handleSubmit = async e => {
-    e.preventDefault();
-    if (newMessage === "") return;
-
-    await addDoc(messagesRef, {
-      text: newMessage,
-      createdAt: serverTimestamp(),
-      user: auth.currentUser.displayName,
-      profilePicture: auth.currentUser.photoURL,
-      room,
-    });
-
-    setNewMessage("");
-  };
+  }, [messages]);
 
   useEffect(() => {
     const audio = new Audio(notificationSound);
@@ -51,8 +39,33 @@ export const Chat = props => {
 
     if (lastMessage && lastMessage.user !== auth.currentUser.displayName) {
       audio.play();
+
+      addNotification({
+        title: `${lastMessage.user} sent a Message `,
+        message: `${lastMessage.user}: ${lastMessage.text}`,
+        duration: 5000,
+        native: true,
+        icon: auth.currentUser.photoURL,
+      });
     }
   }, [messages]);
+
+  const handleSubmit = async e => {
+    e.preventDefault();
+    if (newMessage === "") return;
+
+    const currentUser = auth.currentUser;
+
+    await addDoc(collection(db, "messages"), {
+      text: newMessage,
+      createdAt: serverTimestamp(),
+      user: currentUser.displayName,
+      profilePicture: currentUser.photoURL,
+      room,
+    });
+
+    setNewMessage("");
+  };
 
   return (
     <div className='chat'>
