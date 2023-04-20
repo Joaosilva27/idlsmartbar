@@ -2,7 +2,6 @@ import { useEffect, useState, useRef } from "react";
 import { addDoc, collection, serverTimestamp, onSnapshot, query, where, orderBy } from "firebase/firestore";
 import { auth, db } from "../firebase-config";
 import "../styles/Chat.css";
-import IDLogo from "../images/IDLogo.png";
 import notificationSound from "../sounds/message_sound.mp3";
 import addNotification from "react-push-notification";
 import DefaultProfilePicture from "../images/default_pfp.jpeg";
@@ -11,6 +10,7 @@ export const Chat = props => {
   const { room } = props;
   const [newMessage, setNewMessage] = useState("");
   const [messages, setMessages] = useState([]);
+  const [hasNewMessage, setHasNewMessage] = useState(false);
 
   const messagesRef = useRef(null);
 
@@ -38,15 +38,19 @@ export const Chat = props => {
     const lastMessage = messages[messages.length - 1];
 
     if (lastMessage && lastMessage.user !== auth.currentUser.displayName) {
-      audio.play();
+      setHasNewMessage(true);
 
-      addNotification({
-        title: `${lastMessage.user} sent a Message `,
-        message: `${lastMessage.user}: ${lastMessage.text}`,
-        duration: 5000,
-        native: true,
-        icon: auth.currentUser.photoURL,
-      });
+      if (hasNewMessage) {
+        audio.play();
+
+        addNotification({
+          title: `${lastMessage.user} sent a Message `,
+          message: `${lastMessage.user}: ${lastMessage.text}`,
+          duration: 5000,
+          native: true,
+          icon: auth.currentUser.photoURL,
+        });
+      }
     }
   }, [messages]);
 
@@ -65,6 +69,7 @@ export const Chat = props => {
     });
 
     setNewMessage("");
+    setHasNewMessage(false);
   };
 
   return (
