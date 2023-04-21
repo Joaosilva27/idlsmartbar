@@ -1,7 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/CalibrationGuide.css";
-import CalibrationExample from "../images/calibrationexample.png";
+import SamgungIcon from "../images/samsung.jpg";
+import LgIcon from "../images/lg.jpeg";
+import SonyIcon from "../images/sony.png";
+import PhillipsIcon from "../images/phillips.jpg";
+import TclIcon from "../images/tcl.jpg";
+import HisenseIcon from "../images/hisense.png";
+import OkIcon from "../images/ok.jpeg";
 
 function CalibrationGuide({ signUserOut }) {
   return (
@@ -31,13 +37,18 @@ function CalibrationGuide({ signUserOut }) {
 
         <div className='guide__flex'>
           <div className='guide__flex--column'>
-            <div className='guide__p'>
-              TV calibration is the process of adjusting the settings on your television to optimize the picture quality and ensure that it is
-              displaying colors and images as accurately as possible. Proper calibration can enhance your viewing experience by providing a more
-              natural, balanced and vivid image, which is closer to what the content creators intended.
+            <div className='tv__flex--container'>
+              <img alt='a Samsumg logo' className='tv__image' src={SamgungIcon} />
+              <img alt='a LG logo' className='tv__image' src={LgIcon} />
+              <img alt='a Sony logo' className='tv__image' src={SonyIcon} />
+              <img alt='a Phillips logo' className='tv__image' src={PhillipsIcon} />
             </div>
-
-            <h2 className='guide__selector--title'>Select the guide:</h2>
+            <div className='tv__flex--container'>
+              <img alt='a TCL tv logo' className='tv__image' src={TclIcon} />
+              <img alt='a Hisense tv logo' className='tv__image' src={HisenseIcon} />
+              <img alt='a OK tv logo' className='tv__image' src={OkIcon} />
+            </div>
+            <h2 className='guide__selector--title'>General Knowledge:</h2>
 
             <div className='guide__selector--div'>
               <Link to='/calibration-guide/automatic-guide'>
@@ -51,8 +62,6 @@ function CalibrationGuide({ signUserOut }) {
               </Link>
             </div>
           </div>
-
-          <img alt='A calibration example' className='calman__image' src={CalibrationExample} />
         </div>
       </div>
     </div>
