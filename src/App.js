@@ -1,4 +1,6 @@
 import "./App.css";
+import { useEffect } from "react";
+import { db } from "./firebase-config";
 import { Auth } from "./components/Auth";
 import { Chat } from "./components/Chat";
 import IDLogo from "./images/IDLogo.png";
@@ -9,6 +11,7 @@ import { Route, Routes, Link } from "react-router-dom";
 import CalibrationGuide from "./components/CalibrationGuide";
 import { ManualGuide } from "./components/ManualGuide";
 import { AutomaticGuide } from "./components/AutomaticGuide";
+import { SamsungGuide } from "./components/SamsungGuide";
 
 import Cookies from "universal-cookie";
 import { useState, useRef } from "react";
@@ -83,6 +86,16 @@ function App() {
                       </button>
                     </form>
                   </div>
+                  <div className='rooms__container'>
+                    <div className='room__div'>
+                      <h3>Most visited rooms:</h3>
+                      <div className='room__flex'>
+                        <h4>smartbar</h4>
+
+                        <button className='App__button room__button'>Join</button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               )}
             </>
@@ -91,6 +104,7 @@ function App() {
         <Route path='/calibration-guide' element={<CalibrationGuide signUserOut={signUserOut} />} />
         <Route path='/calibration-guide/manual-guide' element={<ManualGuide signUserOut={signUserOut} />} />
         <Route path='calibration-guide/automatic-guide' element={<AutomaticGuide signUserOut={signUserOut} />} />
+        <Route path='calibration-guide/samsung' element={<SamsungGuide signUserOut={signUserOut} />} />
       </Routes>
     </>
   );

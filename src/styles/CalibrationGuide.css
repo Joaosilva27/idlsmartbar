@@ -1,13 +1,17 @@
-p {
-  font-family: "Roboto", sans-serif;
+* {
+  font-family: "Titillium Web", sans-serif;
+}
+
+h1 {
+  font-size: 2.5rem;
 }
 
 .color__black {
-  color: black;
+  color: white;
 }
 
 .tv__icon {
-  width: 3rem;
+  width: 4rem;
 }
 
 .guide__container {
@@ -37,6 +41,7 @@ p {
   margin-top: 3.5rem;
   text-align: center;
   text-decoration: underline;
+  color: black;
 }
 
 .guide__selector--div {

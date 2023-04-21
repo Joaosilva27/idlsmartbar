@@ -31,3 +31,15 @@
   color: #000000;
   background-color: #ffffff;
 }
+
+.disclaimer {
+  text-align: center;
+  text-decoration: underline;
+  font-style: italic;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}

@@ -24,6 +24,12 @@ export const Auth = props => {
       <button className='signin__google' onClick={signInWithGoogle}>
         Sign In With Google
       </button>
+      <footer>
+        <p className='disclaimer'>
+          Disclaimer: This website is not affiliated with or endorsed by ID Logistics®. The ID Logistics® name and logo are trademarks of ID
+          Logistics®, and are used here only for identification purposes.
+        </p>
+      </footer>
     </div>
   );
 };

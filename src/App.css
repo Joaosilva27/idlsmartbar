@@ -8,7 +8,6 @@ element::-webkit-scrollbar {
   background-color: #0d406a;
   color: #f4f4f4;
   font-family: "Roboto", sans-serif;
-  font-style: italic;
 }
 
 .IDL__Logo {
@@ -116,4 +115,34 @@ element::-webkit-scrollbar {
 .tv__guide:hover {
   transition: 1s ease-in-out;
   background: #ef3342;
+}
+
+.room__div {
+  height: 70vh;
+  border: 3px solid black;
+  border-radius: 0.5rem;
+  width: 30vw;
+  margin-left: 10rem;
+  text-align: center;
+}
+
+.room__flex {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+.room__button {
+  width: 5rem;
+  height: 3rem;
+  margin-left: 1rem;
+}
+
+h3 {
+  border-bottom: 3px solid black;
+}
+
+h4 {
+  text-decoration: underline;
+  margin-top: 0.5rem;
 }
