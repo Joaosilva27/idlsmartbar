@@ -6,9 +6,9 @@
   height: 100vh;
 }
 
-.h2__signin {
+.h4__signin {
   font-family: "Roboto", sans-serif;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .signin__google {
@@ -36,6 +36,16 @@
   text-align: center;
   text-decoration: underline;
   font-style: italic;
+}
+
+.auth__flex--row {
+  display: flex;
+  margin-bottom: 5rem;
+}
+
+.Logo {
+  width: 7rem;
+  height: 5.2rem;
 }
 
 footer {
