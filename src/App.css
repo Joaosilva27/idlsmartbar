@@ -130,6 +130,7 @@ element::-webkit-scrollbar {
   justify-content: center;
   display: flex;
   align-items: center;
+  flex-direction: column;
 }
 
 .room__button {
@@ -138,11 +139,16 @@ element::-webkit-scrollbar {
   margin-left: 1rem;
 }
 
+.room__row {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
 h3 {
   border-bottom: 3px solid black;
 }
 
 h4 {
   text-decoration: underline;
-  margin-top: 0.5rem;
+  margin-top: 1.5rem;
 }

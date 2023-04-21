@@ -1,5 +1,6 @@
 import "./App.css";
 import { useEffect } from "react";
+import { doc, updateDoc, increment, query, collection, orderBy, limit, onSnapshot, getDoc, setDoc } from "firebase/firestore";
 import { db } from "./firebase-config";
 import { Auth } from "./components/Auth";
 import { Chat } from "./components/Chat";
@@ -20,6 +21,7 @@ const cookies = new Cookies();
 function App() {
   const [isAuth, setIsAuth] = useState(cookies.get("auth-token"));
   const [room, setRoom] = useState(null);
+  const [mostVisitedRooms, setMostVisitedRooms] = useState([]);
 
   const roomInputRef = useRef(null);
 
@@ -33,6 +35,37 @@ function App() {
   const handleGoToHome = () => {
     setRoom(null);
   };
+
+  const handleSetRoom = async () => {
+    setRoom(roomInputRef.current.value);
+
+    const roomRef = doc(db, "rooms", roomInputRef.current.value);
+    const roomSnapshot = await getDoc(roomRef);
+
+    if (roomSnapshot.exists()) {
+      await updateDoc(roomRef, {
+        visits: increment(1),
+      });
+    } else {
+      await setDoc(roomRef, {
+        visits: 1,
+      });
+    }
+  };
+
+  const queryRooms = query(collection(db, "rooms"), orderBy("visits", "desc"), limit(3));
+
+  useEffect(() => {
+    const unsubscribe = onSnapshot(queryRooms, snapshot => {
+      const rooms = snapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setMostVisitedRooms(rooms);
+    });
+
+    return () => unsubscribe();
+  }, []);
 
   if (!isAuth) {
     return (
@@ -81,7 +114,7 @@ function App() {
                       <br></br>
                       <input spellCheck='false' className='App__input' ref={roomInputRef} />
                       <br></br>
-                      <button className='App__button' onClick={() => setRoom(roomInputRef.current.value)}>
+                      <button className='App__button' onClick={handleSetRoom}>
                         Enter Chat
                       </button>
                     </form>
@@ -90,9 +123,14 @@ function App() {
                     <div className='room__div'>
                       <h3>Most visited rooms:</h3>
                       <div className='room__flex'>
-                        <h4>smartbar</h4>
-
-                        <button className='App__button room__button'>Join</button>
+                        {mostVisitedRooms.map(room => (
+                          <div key={room.id} className='room__row'>
+                            <h4>{room.id}</h4>
+                            <button className='App__button room__button' onClick={() => setRoom(room.id)}>
+                              Join
+                            </button>
+                          </div>
+                        ))}
                       </div>
                     </div>
                   </div>
