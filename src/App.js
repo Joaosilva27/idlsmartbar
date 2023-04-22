@@ -50,13 +50,9 @@ function App() {
     setRoom(null);
   };
 
-  const handleSetRoom = async () => {
-    setRoom(roomInputRef.current.value);
-
-    const roomRef = doc(db, "rooms", roomInputRef.current.value);
+  const handleSetRoom = async roomId => {
+    const roomRef = doc(db, "rooms", roomId);
     const roomSnapshot = await getDoc(roomRef);
-
-    // Get the user's username
     const username = auth.currentUser.displayName || auth.currentUser.email;
 
     if (roomSnapshot.exists()) {
@@ -66,10 +62,12 @@ function App() {
       });
     } else {
       await setDoc(roomRef, {
+        name: roomId,
         visits: 1,
         users: [username],
       });
     }
+    setRoom(roomId);
   };
 
   const queryRooms = query(collection(db, "rooms"), orderBy("visits", "desc"), limit(3));
@@ -141,7 +139,13 @@ function App() {
                       <br></br>
                       <input spellCheck='false' className='App__input' ref={roomInputRef} />
                       <br></br>
-                      <button className='App__button' onClick={handleSetRoom}>
+                      <button
+                        className='App__button'
+                        onClick={() => {
+                          setRoom(roomInputRef.current.value);
+                          handleSetRoom();
+                        }}
+                      >
                         Enter Chat
                       </button>
                     </form>
@@ -153,7 +157,13 @@ function App() {
                         {mostVisitedRooms.map(room => (
                           <div key={room.id} className='room__row'>
                             <h4>{room.id}</h4>
-                            <button className='App__button room__button' onClick={() => setRoom(room.id)}>
+                            <button
+                              className='App__button room__button'
+                              onClick={() => {
+                                setRoom(room.id);
+                                handleSetRoom(room.id);
+                              }}
+                            >
                               Join
                             </button>
                             <div className='online__flex'>
