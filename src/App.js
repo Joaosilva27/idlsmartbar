@@ -1,6 +1,8 @@
 import "./App.css";
 import { useEffect } from "react";
-import { doc, updateDoc, increment, query, collection, orderBy, limit, onSnapshot, getDoc, setDoc } from "firebase/firestore";
+import { doc, updateDoc, increment, query, collection, orderBy, limit, onSnapshot, getDoc, setDoc, arrayUnion, firestore } from "firebase/firestore";
+import firebase from "firebase/compat/app";
+import "firebase/compat/firestore";
 import { db } from "./firebase-config";
 import { Auth } from "./components/Auth";
 import { Chat } from "./components/Chat";
@@ -25,14 +27,26 @@ function App() {
 
   const roomInputRef = useRef(null);
 
+  const handleUnload = async () => {
+    if (room) {
+      const username = auth.currentUser.displayName || auth.currentUser.email;
+      const roomRef = doc(db, "rooms", room);
+      await updateDoc(roomRef, {
+        users: firebase.firestore.FieldValue.arrayRemove(username),
+      });
+    }
+  };
+
   const signUserOut = async () => {
+    handleUnload();
     await signOut(auth);
     cookies.remove("auth-token");
     setIsAuth(false);
     setRoom(null);
   };
 
-  const handleGoToHome = () => {
+  const handleGoToHome = async () => {
+    handleUnload();
     setRoom(null);
   };
 
@@ -42,13 +56,18 @@ function App() {
     const roomRef = doc(db, "rooms", roomInputRef.current.value);
     const roomSnapshot = await getDoc(roomRef);
 
+    // Get the user's username
+    const username = auth.currentUser.displayName || auth.currentUser.email;
+
     if (roomSnapshot.exists()) {
       await updateDoc(roomRef, {
         visits: increment(1),
+        users: arrayUnion(username),
       });
     } else {
       await setDoc(roomRef, {
         visits: 1,
+        users: [username],
       });
     }
   };
@@ -60,12 +79,20 @@ function App() {
       const rooms = snapshot.docs.map(doc => ({
         id: doc.id,
         ...doc.data(),
-      }));
+        numUsers: Math.max(doc.data().users ? doc.data().users.length : 0, 0),
+      })); // lenght - 1 due to being impossible to store a empty array in firebase database
+      // so by default there will always be a random generated number when a new room is created
+
       setMostVisitedRooms(rooms);
     });
 
     return () => unsubscribe();
   }, []);
+
+  useEffect(() => {
+    window.addEventListener("beforeunload", handleUnload);
+    return () => window.removeEventListener("beforeunload", handleUnload); // remove event listener
+  }, [room]);
 
   if (!isAuth) {
     return (
@@ -95,7 +122,7 @@ function App() {
               </div>
               <div>
                 <div className='calibration__button--div'>
-                  <Link className='tv__guide' to='/calibration-guide'>
+                  <Link className='tv__guide' to='/calibration-guide' onClick={handleUnload}>
                     Calibration Guide
                   </Link>
                 </div>
@@ -129,6 +156,12 @@ function App() {
                             <button className='App__button room__button' onClick={() => setRoom(room.id)}>
                               Join
                             </button>
+                            <div className='online__flex'>
+                              <p>
+                                <span className='online__counter'></span>
+                                {room.numUsers} {room.numUsers === 0 ? "People online" : room.numUsers > 1 ? "People online" : "Person online"}
+                              </p>
+                            </div>
                           </div>
                         ))}
                       </div>

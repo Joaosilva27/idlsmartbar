@@ -145,6 +145,21 @@ element::-webkit-scrollbar {
   margin-bottom: 1rem;
 }
 
+.online__flex {
+  display: flex;
+  margin-top: 1.5rem;
+}
+
+.online__counter {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: green;
+  display: inline-block;
+  margin-right: 5px;
+  margin-left: 1rem;
+}
+
 h3 {
   border-bottom: 3px solid black;
 }
