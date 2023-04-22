@@ -15,6 +15,12 @@ import CalibrationGuide from "./components/CalibrationGuide";
 import { ManualGuide } from "./components/ManualGuide";
 import { AutomaticGuide } from "./components/AutomaticGuide";
 import { SamsungGuide } from "./components/SamsungGuide";
+import { LgGuide } from "./components/LgGuide";
+import { SonyGuide } from "./components/SonyGuide";
+import { Phillips, PhillipsGuide } from "./components/PhillipsGuide";
+import { TclGuide } from "./components/TclGuide";
+import { HisenseGuide } from "./components/HisenseGuide";
+import { OkGuide } from "./components/OkGuide";
 
 import Cookies from "universal-cookie";
 import { useState, useRef } from "react";
@@ -78,8 +84,7 @@ function App() {
         id: doc.id,
         ...doc.data(),
         numUsers: Math.max(doc.data().users ? doc.data().users.length : 0, 0),
-      })); // lenght - 1 due to being impossible to store a empty array in firebase database
-      // so by default there will always be a random generated number when a new room is created
+      }));
 
       setMostVisitedRooms(rooms);
     });
@@ -186,6 +191,12 @@ function App() {
         <Route path='/calibration-guide/manual-guide' element={<ManualGuide signUserOut={signUserOut} />} />
         <Route path='calibration-guide/automatic-guide' element={<AutomaticGuide signUserOut={signUserOut} />} />
         <Route path='calibration-guide/samsung' element={<SamsungGuide signUserOut={signUserOut} />} />
+        <Route path='calibration-guide/lg' element={<LgGuide signUserOut={signUserOut} />} />
+        <Route path='calibration-guide/sony' element={<SonyGuide signUserOut={signUserOut} />} />
+        <Route path='calibration-guide/phillips' element={<PhillipsGuide signUserOut={signUserOut} />} />
+        <Route path='calibration-guide/tcl' element={<TclGuide signUserOut={signUserOut} />} />
+        <Route path='calibration-guide/hisense' element={<HisenseGuide signUserOut={signUserOut} />} />
+        <Route path='calibration-guide/ok' element={<OkGuide signUserOut={signUserOut} />} />
       </Routes>
     </>
   );

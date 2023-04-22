@@ -37,14 +37,26 @@ function CalibrationGuide({ signUserOut }) {
               <Link to='/calibration-guide/samsung'>
                 <img alt='a Samsumg logo' className='tv__image' src={SamgungIcon} />
               </Link>
-              <img alt='a LG logo' className='tv__image' src={LgIcon} />
-              <img alt='a Sony logo' className='tv__image' src={SonyIcon} />
-              <img alt='a Phillips logo' className='tv__image' src={PhillipsIcon} />
+              <Link to='/calibration-guide/lg'>
+                <img alt='a LG logo' className='tv__image' src={LgIcon} />
+              </Link>
+              <Link to='/calibration-guide/sony'>
+                <img alt='a Sony logo' className='tv__image' src={SonyIcon} />
+              </Link>
+              <Link to='/calibration-guide/phillips'>
+                <img alt='a Phillips logo' className='tv__image' src={PhillipsIcon} />
+              </Link>
             </div>
             <div className='tv__flex--container'>
-              <img alt='a TCL tv logo' className='tv__image' src={TclIcon} />
-              <img alt='a Hisense tv logo' className='tv__image' src={HisenseIcon} />
-              <img alt='a OK tv logo' className='tv__image' src={OkIcon} />
+              <Link to='/calibration-guide/tcl'>
+                <img alt='a TCL tv logo' className='tv__image' src={TclIcon} />
+              </Link>
+              <Link to='/calibration-guide/hisense'>
+                <img alt='a Hisense tv logo' className='tv__image' src={HisenseIcon} />
+              </Link>
+              <Link to='/calibration-guide/ok'>
+                <img alt='a OK tv logo' className='tv__image' src={OkIcon} />
+              </Link>
             </div>
             <h2 className='guide__selector--title'>General Knowledge:</h2>
 
