@@ -1,0 +1,41 @@
+h1 {
+  color: #ef3342;
+}
+
+h2 {
+  color: #ef3342;
+}
+
+.lg__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+li {
+  color: #ef3342;
+}
+
+.li__color {
+  color: white;
+  text-decoration: underline;
+}
+
+.p__container {
+  line-height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+}
+
+.row__container {
+  display: flex;
+  flex-direction: row;
+}
+
+.lg__box {
+  width: 30rem;
+  margin-left: 3rem;
+}
