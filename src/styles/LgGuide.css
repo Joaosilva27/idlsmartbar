@@ -35,7 +35,44 @@ li {
   flex-direction: row;
 }
 
+.row__column {
+  justify-content: center;
+}
+
+.row__h4 {
+  display: flex;
+  justify-content: center;
+}
+
 .lg__box {
   width: 30rem;
   margin-left: 3rem;
+}
+
+.button__guides {
+  margin: 1rem;
+  margin-top: 5rem;
+  font-size: 1.3rem;
+  border-radius: 5px;
+  width: 9rem;
+  height: 6rem;
+  cursor: pointer;
+  background: #1b171c;
+
+  border: 2px solid #1b171c;
+  outline: none;
+  transition: 1s ease-in-out;
+  color: #ef3342;
+}
+
+.button__guides:hover {
+  transition: 0.6s ease-in-out;
+}
+
+.animation {
+  transition: all 0.2s ease-in-out;
+}
+
+.animation:hover {
+  transform: scale(1.3);
 }
