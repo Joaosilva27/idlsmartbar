@@ -1,5 +1,13 @@
-.color__black {
-  color: black;
+h1 {
+  color: #ef3342;
+}
+
+h2 {
+  color: #ef3342;
+}
+
+.color__white {
+  color: white;
 }
 
 .manual__container {
