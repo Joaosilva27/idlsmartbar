@@ -1,10 +1,16 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import LGbox from "../images/lg_box.png";
 import "../styles/LgGuide.css";
+import backArrow from "../images/backArrow.png";
 
 export const LgGuide = ({ signUserOut }) => {
+  const navigate = useNavigate();
   const [shortGuide, setShortGuide] = useState(false);
+
+  const onHandleGoBack = () => {
+    navigate(-1);
+  };
 
   return (
     <div>
@@ -17,26 +23,37 @@ export const LgGuide = ({ signUserOut }) => {
             <Link to='/'>
               <button className='signOut--sendMessage__button'>Home</button>
             </Link>
+            <button onClick={onHandleGoBack} className=' back__container back__button'>
+              <span>
+                <img className='back__arrow' src={backArrow} />
+                <p className='back__p'>Back</p>
+              </span>
+            </button>
           </div>
           <div className='lg__container'>
             <h1 style={{ textAlign: "center" }}>LG GUIDE</h1>
-            <div className='row__container'>
-              <div>
-                <button onClick={() => setShortGuide(true)} style={{ color: "white" }} className='button__guides animation'>
-                  Short Guide
-                </button>
-                <button style={{ color: "white" }} className='button__guides animation'>
-                  Full Guide
-                </button>
-                <button style={{ color: "white" }} className='button__guides animation'>
-                  Manual Guide
-                </button>
-                <div className='row__h4'>
-                  <h4>Report Example</h4>
-                  <h4 style={{ marginLeft: "2rem" }}>Word Document Guide</h4>
+            <div style={{ display: "flex", alignItems: "center", height: "70vh" }}>
+              <div className='row__container'>
+                <div>
+                  <button onClick={() => setShortGuide(true)} style={{ color: "white" }} className='button__guides animation'>
+                    Short Guide
+                  </button>
+                  <Link to='/calibration-guide/lg/full-guide'>
+                    <button style={{ color: "white" }} className='button__guides animation'>
+                      Full Guide
+                    </button>
+                  </Link>
+
+                  <button style={{ color: "white" }} className='button__guides animation'>
+                    Manual Guide
+                  </button>
+                  <div className='row__h4'>
+                    <h4>Report Example</h4>
+                    <h4 style={{ marginLeft: "2rem" }}>Word Document Guide</h4>
+                  </div>
                 </div>
+                <img className='lg__box' alt='LG TV Box' src={LGbox} />
               </div>
-              <img className='lg__box' alt='LG TV Box' src={LGbox} />
             </div>
           </div>
         </div>
@@ -51,6 +68,17 @@ export const LgGuide = ({ signUserOut }) => {
             <Link to='/'>
               <button className='signOut--sendMessage__button'>Home</button>
             </Link>
+            <button
+              onClick={() => {
+                setShortGuide(false);
+              }}
+              className=' back__container back__button'
+            >
+              <span>
+                <img className='back__arrow' src={backArrow} />
+                <p className='back__p'>Back</p>
+              </span>
+            </button>
           </div>
           <h2 style={{ textAlign: "center" }}>Short Guide</h2>
           <div style={{ marginTop: "1rem" }}>

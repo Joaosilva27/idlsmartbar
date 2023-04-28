@@ -76,3 +76,24 @@ li {
 .animation:hover {
   transform: scale(1.3);
 }
+
+.back__arrow {
+  width: 2rem;
+  color: white;
+}
+
+.back__container {
+  position: absolute;
+}
+
+.back__button {
+  border-radius: 5px;
+  width: 6rem;
+  height: 60px;
+  cursor: pointer;
+  background: transparent;
+  border: 2px solid #1b171c;
+  outline: none;
+  transition: 1s ease-in-out;
+  color: #ef3342;
+}

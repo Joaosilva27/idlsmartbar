@@ -24,6 +24,7 @@ import { OkGuide } from "./components/OkGuide";
 
 import Cookies from "universal-cookie";
 import { useState, useRef } from "react";
+import { LgFullGuide } from "./components/LgFullGuide";
 const cookies = new Cookies();
 
 function App() {
@@ -192,6 +193,7 @@ function App() {
         <Route path='calibration-guide/automatic-guide' element={<AutomaticGuide signUserOut={signUserOut} />} />
         <Route path='calibration-guide/samsung' element={<SamsungGuide signUserOut={signUserOut} />} />
         <Route path='calibration-guide/lg' element={<LgGuide signUserOut={signUserOut} />} />
+        <Route path='calibration-guide/lg/full-guide' element={<LgFullGuide signUserOut={signUserOut} />} />
         <Route path='calibration-guide/sony' element={<SonyGuide signUserOut={signUserOut} />} />
         <Route path='calibration-guide/phillips' element={<PhillipsGuide signUserOut={signUserOut} />} />
         <Route path='calibration-guide/tcl' element={<TclGuide signUserOut={signUserOut} />} />
