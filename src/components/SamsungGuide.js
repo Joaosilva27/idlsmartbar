@@ -3,17 +3,9 @@ import { Link } from "react-router-dom";
 import "../styles/SamsungGuide.css";
 import SamsungBox from "../images/samsungbox.jpeg";
 
-export const SamsungGuide = ({ signUserOut }) => {
+export const SamsungGuide = () => {
   return (
     <div>
-      <div className='sign__out'>
-        <button className='signOut--sendMessage__button' onClick={signUserOut}>
-          Sign Out
-        </button>
-        <Link to='/'>
-          <button className='signOut--sendMessage__button'>Home</button>
-        </Link>
-      </div>
       <div className='samsung__container'>
         <h1>SAMSUNG GUIDE</h1>
         <div className='row__container'>

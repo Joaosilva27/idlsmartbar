@@ -10,7 +10,7 @@ import IDLogo from "./images/IDLogo.png";
 import TVicon from "./images/TVicon.png";
 import { signOut } from "firebase/auth";
 import { auth } from "./firebase-config";
-import { Route, Routes, Link } from "react-router-dom";
+import { Route, Routes, Link, useNavigate, useLocation } from "react-router-dom";
 import CalibrationGuide from "./components/CalibrationGuide";
 import { ManualGuide } from "./components/ManualGuide";
 import { AutomaticGuide } from "./components/AutomaticGuide";
@@ -21,6 +21,7 @@ import { PhillipsGuide } from "./components/PhillipsGuide";
 import { TclGuide } from "./components/TclGuide";
 import { HisenseGuide } from "./components/HisenseGuide";
 import { OkGuide } from "./components/OkGuide";
+import backArrow from "./images/backArrow.png";
 
 import Cookies from "universal-cookie";
 import { useState, useRef } from "react";
@@ -28,6 +29,8 @@ import { LgFullGuide } from "./components/LgFullGuide";
 const cookies = new Cookies();
 
 function App() {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [isAuth, setIsAuth] = useState(cookies.get("auth-token"));
   const [room, setRoom] = useState(null);
   const [mostVisitedRooms, setMostVisitedRooms] = useState([]);
@@ -106,24 +109,40 @@ function App() {
     );
   }
 
+  const onHandleGoBack = () => {
+    navigate(-1);
+  };
+
   return (
     <>
+      <div>
+        <div className='sign__out'>
+          <button className='signOut--sendMessage__button' onClick={signUserOut}>
+            Sign Out
+          </button>
+          {(location.pathname !== "/" || room) && (
+            <Link to='/'>
+              <button onClick={handleGoToHome} className='signOut--sendMessage__button'>
+                Home
+              </button>
+            </Link>
+          )}
+        </div>
+        {location.pathname !== "/" && (
+          <button onClick={onHandleGoBack} className=' back__container back__button'>
+            <span>
+              <img className='back__arrow' src={backArrow} alt='Arrow Icon' />
+              <p className='back__p'>Back</p>
+            </span>
+          </button>
+        )}
+      </div>
       <Routes>
         <Route
           exact
           path='/'
           element={
             <>
-              <div className='sign__out'>
-                <button className='signOut--sendMessage__button' onClick={signUserOut}>
-                  Sign Out
-                </button>
-                {room ? (
-                  <button onClick={handleGoToHome} className='signOut--sendMessage__button'>
-                    Home
-                  </button>
-                ) : null}
-              </div>
               <div>
                 <div className='calibration__button--div'>
                   <Link className='tv__guide' to='/calibration-guide' onClick={handleUnload}>
@@ -189,6 +208,7 @@ function App() {
             </>
           }
         />
+        <Route path='/' element={<App />} />
         <Route path='/calibration-guide' element={<CalibrationGuide signUserOut={signUserOut} />} />
         <Route path='/calibration-guide/manual-guide' element={<ManualGuide signUserOut={signUserOut} />} />
         <Route path='calibration-guide/automatic-guide' element={<AutomaticGuide signUserOut={signUserOut} />} />

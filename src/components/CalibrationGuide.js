@@ -10,18 +10,9 @@ import TclIcon from "../images/tcl.jpg";
 import HisenseIcon from "../images/hisense.png";
 import OkIcon from "../images/ok.jpeg";
 
-function CalibrationGuide({ signUserOut }) {
+function CalibrationGuide() {
   return (
     <div>
-      <div className='sign__out'>
-        <button className='signOut--sendMessage__button' onClick={signUserOut}>
-          Sign Out
-        </button>
-        <Link to='/'>
-          <button className='signOut--sendMessage__button'>Home</button>
-        </Link>
-      </div>
-
       <div className='guide__container'>
         <span style={{ display: "flex" }}>
           <h1 className='color__black'>TV Calibration Guide</h1>

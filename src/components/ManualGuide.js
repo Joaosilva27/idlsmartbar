@@ -5,14 +5,6 @@ import { Link } from "react-router-dom";
 export const ManualGuide = ({ signUserOut }) => {
   return (
     <div>
-      <div className='sign__out'>
-        <button className='signOut--sendMessage__button' onClick={signUserOut}>
-          Sign Out
-        </button>
-        <Link to='/'>
-          <button className='signOut--sendMessage__button'>Home</button>
-        </Link>
-      </div>
       <div className='manual__container'>
         <h1>!!!TEST!!! !!!MANUAL GUIDE!!!</h1>
         <br></br>
