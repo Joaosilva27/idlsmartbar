@@ -3,18 +3,10 @@ import { Link } from "react-router-dom";
 import LGbox from "../images/lg_box.png";
 import "../styles/LgGuide.css";
 import LG_Report from "../documents/LG_Report.pdf";
+import PdfDownloader from "./PdfDownloader";
 
 export const LgGuide = () => {
   const [shortGuide, setShortGuide] = useState(false);
-
-  function downloadPdf() {
-    const link = document.createElement("a");
-    link.href = LG_Report;
-    link.download = "report.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  }
 
   return (
     <div>
@@ -38,9 +30,7 @@ export const LgGuide = () => {
                     Manual Guide
                   </button>
                   <div className='row__h4'>
-                    <h4 onMouseEnter={e => (e.target.style.cursor = "pointer")} onClick={downloadPdf}>
-                      Report Example
-                    </h4>
+                    <PdfDownloader fileName='LG Report Example' fileUrl={LG_Report} />
 
                     <h4 style={{ marginLeft: "2rem" }}>Word Document Guide</h4>
                   </div>
