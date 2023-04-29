@@ -1,6 +1,6 @@
 import "./App.css";
 import { useEffect } from "react";
-import { doc, updateDoc, increment, query, collection, orderBy, limit, onSnapshot, getDoc, setDoc, arrayUnion, firestore } from "firebase/firestore";
+import { doc, updateDoc, increment, query, collection, orderBy, limit, onSnapshot, getDoc, setDoc, arrayUnion } from "firebase/firestore";
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import { db } from "./firebase-config";
@@ -17,7 +17,7 @@ import { AutomaticGuide } from "./components/AutomaticGuide";
 import { SamsungGuide } from "./components/SamsungGuide";
 import { LgGuide } from "./components/LgGuide";
 import { SonyGuide } from "./components/SonyGuide";
-import { Phillips, PhillipsGuide } from "./components/PhillipsGuide";
+import { PhillipsGuide } from "./components/PhillipsGuide";
 import { TclGuide } from "./components/TclGuide";
 import { HisenseGuide } from "./components/HisenseGuide";
 import { OkGuide } from "./components/OkGuide";
@@ -148,8 +148,9 @@ function App() {
                       <button
                         className='App__button'
                         onClick={() => {
-                          setRoom(roomInputRef.current.value);
-                          handleSetRoom();
+                          const newRoomId = roomInputRef.current.value;
+                          setRoom(newRoomId);
+                          handleSetRoom(newRoomId);
                         }}
                       >
                         Enter Chat
