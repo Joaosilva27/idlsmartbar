@@ -32,6 +32,7 @@ function App() {
   const navigate = useNavigate();
   const location = useLocation();
   const [isAuth, setIsAuth] = useState(cookies.get("auth-token"));
+  const [isAnonymousAuth, setIsAnonymousAuth] = useState(false);
   const [room, setRoom] = useState(null);
   const [mostVisitedRooms, setMostVisitedRooms] = useState([]);
 
@@ -52,6 +53,7 @@ function App() {
     await signOut(auth);
     cookies.remove("auth-token");
     setIsAuth(false);
+    setIsAnonymousAuth(false);
     setRoom(null);
   };
 
@@ -98,13 +100,13 @@ function App() {
 
   useEffect(() => {
     window.addEventListener("beforeunload", handleUnload);
-    return () => window.removeEventListener("beforeunload", handleUnload); // remove event listener
+    return () => window.removeEventListener("beforeunload", handleUnload);
   }, [room]);
 
-  if (!isAuth) {
+  if (!isAuth || !isAnonymousAuth) {
     return (
       <div className='App'>
-        <Auth setIsAuth={setIsAuth} />
+        <Auth setIsAnonymousAuth={setIsAnonymousAuth} setIsAuth={setIsAuth} />
       </div>
     );
   }

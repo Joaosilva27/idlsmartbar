@@ -88,7 +88,7 @@ export const Chat = props => {
             ) : (
               <img className='profile__picture' src={DefaultProfilePicture} alt={message.user}></img>
             )}
-            {message.user} : {message.text}
+            {message.user || "Guest"} : {message.text}
           </p>
         ))}
       </div>
