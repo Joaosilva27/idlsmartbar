@@ -1,5 +1,6 @@
 import { auth, provider } from "../firebase-config.js";
 import { signInWithPopup, signInAnonymously } from "firebase/auth";
+import { useState } from "react";
 
 import "../styles/Auth.css";
 import IDLogo from "../images/IDLogo.png";
@@ -9,12 +10,22 @@ import Cookies from "universal-cookie";
 const cookies = new Cookies();
 
 export const Auth = props => {
-  const { setIsAuth, setIsAnonymousAuth } = props;
+  const { setIsAuth, setIsAnonymousAuth, setIsLoading } = props;
+
+  const handleLoading = () => {
+    setIsLoading(true);
+
+    setTimeout(() => {
+      setIsLoading(false);
+      useState.push("/");
+    }, 1300);
+  };
 
   const signInWithGoogle = async () => {
     try {
       const result = await signInWithPopup(auth, provider);
       cookies.set("auth-token", result.user.refreshToken);
+      handleLoading();
       setIsAuth(true);
     } catch (err) {
       console.error(err);
@@ -27,6 +38,7 @@ export const Auth = props => {
       const user = userCredential.user;
       const token = await user.getIdToken();
       cookies.set("auth-token", token, { path: "/" });
+      handleLoading();
       setIsAuth(true);
       setIsAnonymousAuth(true);
     } catch (error) {

@@ -21,6 +21,7 @@ import { PhillipsGuide } from "./components/PhillipsGuide";
 import { TclGuide } from "./components/TclGuide";
 import { HisenseGuide } from "./components/HisenseGuide";
 import { OkGuide } from "./components/OkGuide";
+import Loading from "./components/Loading";
 import backArrow from "./images/backArrow.png";
 
 import Cookies from "universal-cookie";
@@ -35,6 +36,7 @@ function App() {
   const [isAnonymousAuth, setIsAnonymousAuth] = useState(false);
   const [room, setRoom] = useState(null);
   const [mostVisitedRooms, setMostVisitedRooms] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const roomInputRef = useRef(null);
 
@@ -103,10 +105,14 @@ function App() {
     return () => window.removeEventListener("beforeunload", handleUnload);
   }, [room]);
 
+  if (isLoading) {
+    return <Loading />;
+  }
+
   if (!isAuth || !isAnonymousAuth) {
     return (
       <div className='App'>
-        <Auth setIsAnonymousAuth={setIsAnonymousAuth} setIsAuth={setIsAuth} />
+        <Auth setIsLoading={setIsLoading} setIsAnonymousAuth={setIsAnonymousAuth} setIsAuth={setIsAuth} />
       </div>
     );
   }
@@ -211,6 +217,7 @@ function App() {
           }
         />
         <Route path='/' element={<App />} />
+        <Route path='/loading' element={<Loading />}></Route>
         <Route path='/calibration-guide' element={<CalibrationGuide signUserOut={signUserOut} />} />
         <Route path='/calibration-guide/manual-guide' element={<ManualGuide signUserOut={signUserOut} />} />
         <Route path='calibration-guide/automatic-guide' element={<AutomaticGuide signUserOut={signUserOut} />} />

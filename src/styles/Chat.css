@@ -43,7 +43,7 @@ body {
   display: flex;
   align-items: flex-start;
   margin-bottom: 10px;
-  overflow-y: scroll;
+  overflow-wrap: y;
 }
 
 .user {
@@ -79,6 +79,7 @@ body {
   margin-bottom: 0.7rem;
   align-self: flex-start;
   margin-left: 30%;
+  word-wrap: break-word;
 }
 
 .Chat__room--title {

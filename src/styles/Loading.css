@@ -1,0 +1,24 @@
+.loading__body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.loading__column {
+  display: flex;
+  flex-direction: column;
+}
+
+.loading__image {
+  border: 0.2rem solid black;
+  width: 15rem;
+  border-radius: 0.6rem;
+}
+
+.loading__text {
+  font-size: 1.1rem;
+  text-align: center;
+  margin-top: 1rem;
+  font-style: italic;
+}
