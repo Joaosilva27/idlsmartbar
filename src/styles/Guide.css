@@ -1,0 +1,50 @@
+.guide__body {
+  display: flex;
+  justify-content: center;
+}
+
+.guide__title {
+  font-size: 2rem;
+  color: white;
+  text-decoration: underline;
+}
+
+.guide__icon {
+  width: 4rem;
+  margin-left: 1rem;
+}
+
+.guide__container--center {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+.guide__tv--icon {
+  width: 10rem;
+  padding: 0.5rem;
+}
+
+.guide__phone--icon {
+  width: 6.5rem;
+  margin-left: 2rem;
+}
+
+.guide__tv--h1 {
+  margin-top: 1.5rem;
+  color: #1b171c;
+}
+
+.guide__tv--h1:hover {
+  text-decoration: underline;
+}
+
+.guide__phone--h1 {
+  margin-left: 1rem;
+  margin-top: 1.5rem;
+  color: #1b171c;
+}
+
+.guide__phone--h1:hover {
+  text-decoration: underline;
+}

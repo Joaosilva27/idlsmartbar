@@ -27,6 +27,7 @@ import backArrow from "./images/backArrow.png";
 import Cookies from "universal-cookie";
 import { useState, useRef } from "react";
 import { LgFullGuide } from "./components/LgFullGuide";
+import { Guide } from "./components/Guide";
 const cookies = new Cookies();
 
 function App() {
@@ -153,8 +154,8 @@ function App() {
             <>
               <div>
                 <div className='calibration__button--div'>
-                  <Link className='tv__guide' to='/calibration-guide' onClick={handleUnload}>
-                    Calibration Guide
+                  <Link className='tv__guide' to='/guides' onClick={handleUnload}>
+                    Guides
                   </Link>
                 </div>
               </div>
@@ -218,6 +219,7 @@ function App() {
         />
         <Route path='/' element={<App />} />
         <Route path='/loading' element={<Loading />}></Route>
+        <Route path='/guides' element={<Guide />} />
         <Route path='/calibration-guide' element={<CalibrationGuide signUserOut={signUserOut} />} />
         <Route path='/calibration-guide/manual-guide' element={<ManualGuide signUserOut={signUserOut} />} />
         <Route path='calibration-guide/automatic-guide' element={<AutomaticGuide signUserOut={signUserOut} />} />

@@ -95,6 +95,7 @@ element::-webkit-scrollbar {
 .tv__guide {
   display: flex;
   align-items: center;
+  justify-content: center;
   text-align: center;
   font-size: 0.9rem;
   border-radius: 5px;
