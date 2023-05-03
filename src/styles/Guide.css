@@ -9,15 +9,25 @@
   text-decoration: underline;
 }
 
-.guide__icon {
-  width: 4rem;
-  margin-left: 1rem;
+.grid__box {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
 }
 
 .guide__container--center {
   display: flex;
   justify-content: center;
   margin-top: 5rem;
+}
+
+.grid--1 {
+  margin-left: 5rem;
+}
+
+.grid--2 {
+  margin-right: 10rem;
 }
 
 .guide__tv--icon {
@@ -47,4 +57,13 @@
 
 .guide__phone--h1:hover {
   text-decoration: underline;
+}
+
+.guide__abonnement--icon {
+  height: 6.5rem;
+  margin-left: 4rem;
+}
+
+.guide__laptop--icon {
+  height: 6.5rem;
 }
