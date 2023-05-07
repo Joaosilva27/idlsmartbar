@@ -14,9 +14,9 @@ export const LgGuide = () => {
         <div>
           <div className='lg__container'>
             <h1 style={{ textAlign: "center" }}>LG GUIDE</h1>
-            <div style={{ display: "flex", alignItems: "center", height: "70vh" }}>
+            <div style={{ display: "flex", alignItems: "center", height: "80vh" }}>
               <div className='row__container'>
-                <div>
+                <div style={{ marginTop: "3rem" }}>
                   <button onClick={() => setShortGuide(true)} style={{ color: "white" }} className='button__guides animation'>
                     Short Guide
                   </button>
