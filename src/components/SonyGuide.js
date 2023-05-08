@@ -4,8 +4,9 @@ import { useState } from "react";
 import PdfDownloader from "./PdfDownloader";
 import SonyBox from "../images/sonyTV.png";
 import SonyPDF from "../documents/Sony_Report.pdf";
+import "../styles/SonyGuide.css";
 
-export const SonyGuide = ({ signUserOut }) => {
+export const SonyGuide = () => {
   const [shortGuide, setShortGuide] = useState(false);
 
   return (
@@ -47,47 +48,78 @@ export const SonyGuide = ({ signUserOut }) => {
           <h2 style={{ textAlign: "center" }}>Short Guide</h2>
           <div style={{ marginTop: "1rem" }}>
             <div className='p__container'>
-              <ol>
-                <li>
-                  <span className='li__color'>Turn on the TV and select the language/country</span>
-                </li>
-                <li>
-                  <span className='li__color'>Select "exit first user" and confirm by selecting "yes"</span>
-                </li>
-                <li>
-                  <span className='li__color'>Open settings, go to picture mode and select "Expert Bright"</span>
-                </li>
-                <li>
-                  <span className='li__color'>Turn off energy saving</span>
-                </li>
-                <li>
-                  <span className='li__color'>Go back to HDMI 1 and start the first reading</span>
-                </li>
-                <li>
-                  <span className='li__color'>After the reading is finished, on the laptop click "Find TV"</span>
-                </li>
-                <li>
-                  <span className='li__color'>When the unique code shows up on the TV screen, type it into the laptop</span>
-                </li>
-                <li>
-                  <span className='li__color'>Leave the only option selected as "Expert Day" and start the last reading</span>
-                </li>
-                <li>
-                  <span className='li__color'>After the reading is finished, create the report</span>
-                </li>
-                <li>
-                  <span className='li__color'>Go to every HDMI and change it's picture setting to "Expert Bright"</span>
-                </li>
-                <li>
-                  <span className='li__color'>Go back to HDMI 1 and start the second reading</span>
-                </li>
-                <li>
-                  <span className='li__color'>Go to advanced settings and select "Apply to all inputs"</span>
-                </li>
-                <li>
-                  <span className='li__color'>Change the language to dutch</span>
-                </li>
-              </ol>
+              <div className='short__guide__container'>
+                <ol>
+                  <li>
+                    <span className='li__color'>Turn on the TV and select English or Dutch as the language </span>
+                  </li>
+                  <li>
+                    <span className='li__color'>Select "Netherlands" &#8594; "Set up basic TV"</span>
+                  </li>
+                  <li>
+                    <span className='li__color'>Scroll all the way down and select "Skip"</span>
+                  </li>
+                  <li>
+                    <span className='li__color'>Accept the terms of service</span>
+                  </li>
+                  <li>
+                    <span className='li__color'>Once the TV finishes loading, select "Start"</span>
+                  </li>
+                  <li>
+                    <span className='li__color'>Scroll all the way down and select "Agree All" and "Proceed"</span>
+                  </li>
+                  <li>
+                    <span className='li__color'>Agree to the Privacy Notice Terms of Service</span>
+                  </li>
+                  <li>
+                    <span className='li__color'>Type 1 2 3 4 as the Parental Lock, and type it again to confirm it</span>
+                  </li>
+                  <li>
+                    <span className='li__color'>Leave Power Saving as "Off" &#8594; "Skip" &#8594; "Next" &#8594; "Table-Top Stand"</span>
+                  </li>
+                  <li>
+                    <span className='li__color'>Skip the "Acoustic Auto Calibration" &#8594; "Next" &#8594; "OK" &#8594; "Complete"</span>
+                  </li>
+                  <li>
+                    <span className='li__color'>
+                      Once the TV finishes it's setup, press the source/input button on the TV Remote and select "Edit"{" "}
+                    </span>
+                  </li>
+                  <li>
+                    <span className='li__color'>Select all of the HDMI's by pressing "OK" for each, and select "Close"</span>
+                  </li>
+                  <li>
+                    <span className='li__color'>Go to HDMI1 and on the laptop start the first reading</span>
+                  </li>
+                  <li>
+                    <span className='li__color'>
+                      Once the first reading is finished, press the "Home" button, scroll all the way to the right and select "Calman for Bravia"
+                    </span>
+                  </li>
+                  <li>
+                    <span className='li__color'>Press "OK", write the "IP Address on the laptop and click "Find SONY TV"</span>
+                  </li>
+                  <li>
+                    <span className='li__color'>Unselect "PRO2" and leave only "PRO1" selected</span>
+                  </li>
+                  <li>
+                    <span className='li__color'>Click "Start AutoCal" to start the last reading</span>
+                  </li>
+                  <li>
+                    <span className='li__color'>Once the last reading is finished, press the "Settings" button &#8594; "Picture Settings"</span>
+                  </li>
+                  <li>
+                    <span className='li__color'>
+                      Copy every single setting from HDMI1 to the rest of the HDMI's, and make sure to turn off "Motionflow" in all of them
+                    </span>
+                  </li>
+                  <li>
+                    <span className='li__color'>
+                      Press the "Settings" button &#8594; select "Settings" &#8594; "System" &#8594; "Language" &#8594; "Netherlands"
+                    </span>
+                  </li>
+                </ol>
+              </div>
               <img className='lg__box' alt='Sony TV Box' src={SonyBox} />
             </div>
           </div>
