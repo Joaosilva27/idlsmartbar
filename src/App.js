@@ -20,6 +20,8 @@ import { SonyGuide } from "./components/SonyGuide";
 import { PhillipsGuide } from "./components/PhillipsGuide";
 import { TclGuide } from "./components/TclGuide";
 import { HisenseGuide } from "./components/HisenseGuide";
+import { HisenseManual } from "./components/HisenseManual";
+import { HisenseE7 } from "./components/HisenseE7";
 import { OkGuide } from "./components/OkGuide";
 import Loading from "./components/Loading";
 import backArrow from "./images/backArrow.png";
@@ -230,6 +232,8 @@ function App() {
         <Route path='calibration-guide/phillips' element={<PhillipsGuide signUserOut={signUserOut} />} />
         <Route path='calibration-guide/tcl' element={<TclGuide signUserOut={signUserOut} />} />
         <Route path='calibration-guide/hisense' element={<HisenseGuide signUserOut={signUserOut} />} />
+        <Route path='calibration-guide/hisense/manual' element={<HisenseManual />} />
+        <Route path='calibration-guide/hisense/manual/e7' element={<HisenseE7 />} />
         <Route path='calibration-guide/ok' element={<OkGuide signUserOut={signUserOut} />} />
       </Routes>
     </>
