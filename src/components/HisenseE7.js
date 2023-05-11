@@ -1,5 +1,7 @@
 import React from "react";
 import HisenseE7Box from "../images/hisense_e7.png";
+import PdfDownloader from "./PdfDownloader";
+import HisenseE7Report from "../documents/Hisense_Report.pdf";
 
 export const HisenseE7 = () => {
   return (
@@ -60,8 +62,10 @@ export const HisenseE7 = () => {
                   'White Balance' and start doing the White Balance.
                   <br></br>
                   <br></br>
-                  &#40;NOTE1: Hisense is the only TV that starts with 'Offset' instead of 'Gain', which means that in the menu the first three R G B
-                  colors are 'Offset'&#40;30&#41; and the last three R G B are 'Gain'&#40;80&#41;&#41;
+                  &#40;NOTE1: While other TV's have the white balance menu starting with 'Gain' and then 'Offset', Hisense shows the 'Offset' first in
+                  the menu. Which means that in the menu the first three R G B colors are 'Offset'&#40;30&#41; and the last three R G B are
+                  'Gain'&#40;80&#41; However this is just aestethic, we do the White Balance as every other TV, by starting off with '80' and then
+                  '30'&#41;
                   <br></br>
                   <br></br>&#40;NOTE2: This model does not allow for the R G B values to be perfectly balanced, so just try getting the White Balance
                   bars as low as you can &#40;if it goes a bit above the green line that's fine&#41;&#41;{" "}
@@ -102,7 +106,10 @@ export const HisenseE7 = () => {
               </li>
             </ol>
           </div>
-          <img style={{ width: "23rem" }} className='lg__box' alt='Hisense E7 TV Box' src={HisenseE7Box} />
+          <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+            <img style={{ width: "23rem" }} className='lg__box' alt='Hisense E7 TV Box' src={HisenseE7Box} />
+            <PdfDownloader fileName='Hisense E7 Report' fileUrl={HisenseE7Report} />
+          </div>
         </div>
       </div>
     </div>

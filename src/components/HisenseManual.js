@@ -9,22 +9,20 @@ export const HisenseManual = () => {
       <div className='div__center'>
         <div>
           <div className='div__card'>
+            <h1 style={{ color: "white" }}>Series 7</h1>
+            <br></br>
             <Link to='/calibration-guide/hisense/manual/e7'>
-              <button style={{ color: "white" }} className='button__guides animation card__tv__name'>
-                E7 Series
-              </button>
+              <img className='card__tv__image animation' alt='Hisense E7 Model' src={HisenseE7} />
             </Link>
-            <img className='card__tv__image' alt='Hisense E7 Model' src={HisenseE7} />
           </div>
         </div>
         <div className='div__row'>
           <div className='div__card'>
-            <Link>
-              <button style={{ color: "white" }} className='button__guides animation card__tv__name'>
-                !!EMPTY
-              </button>
+            <h1 style={{ color: "white" }}>!!!EMPTY</h1>
+            <br></br>
+            <Link to='/calibration-guide/hisense/manual'>
+              <img className='card__tv__image animation' alt='Hisense E7 Model' src={HisenseE7} />
             </Link>
-            <img className='card__tv__image' alt='Hisense E7 Model' src={HisenseE7} />
           </div>
         </div>
       </div>
