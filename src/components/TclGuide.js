@@ -1,10 +1,69 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import TclBox from "../images/tclBox.png";
+import TclReport from "../documents/Tcl_Report.pdf";
+import TclTemplate from "../documents/Tcl_Template.docx";
+import PdfDownloader from "./PdfDownloader";
 
-export const TclGuide = ({ signUserOut }) => {
+export const TclGuide = () => {
+  const [shortGuide, setShortGuide] = useState(false);
+
   return (
-    <div className='samsung__container'>
-      <h1>TCL GUIDE</h1>
+    <div>
+      {!shortGuide && (
+        <div>
+          <div className='lg__container'>
+            <h1 style={{ textAlign: "center" }}>TCL</h1>
+            <div style={{ display: "flex", alignItems: "center", height: "70vh" }}>
+              <div className='row__container'>
+                <div style={{ marginTop: "2rem" }}>
+                  <button onClick={() => setShortGuide(true)} style={{ color: "white" }} className='button__guides animation'>
+                    Short Guide
+                  </button>
+                  <Link to='/calibration-guide/tcl'>
+                    <button style={{ color: "white" }} className='button__guides animation'>
+                      Full Guide
+                    </button>
+                  </Link>
+
+                  <Link to='/calibration-guide/tcl'>
+                    <button style={{ color: "white" }} className='button__guides animation'>
+                      Manual Guide
+                    </button>
+                  </Link>
+
+                  <div className='row__h4'>
+                    <PdfDownloader fileName='TCL Report Example' fileUrl={TclReport} />
+                  </div>
+                </div>
+                <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                  <img className='lg__box' alt='LG TV Box' src={TclBox} />
+                  <PdfDownloader fileName='TCL Template' fileUrl={TclTemplate} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {shortGuide && (
+        <div>
+          <h2 style={{ textAlign: "center" }}>Short Guide</h2>
+          <div style={{ marginTop: "1rem" }}>
+            <div className='p__container'>
+              <div className='short__guide__container'>
+                <ol>
+                  <li>
+                    <span>test</span>
+                  </li>
+                </ol>
+              </div>
+              <img className='lg__box' alt='Hisense TV Box' src={TclBox} />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
