@@ -115,3 +115,7 @@ body {
   width: 1rem;
   margin-right: 0.3rem;
 }
+
+.flex-end {
+  align-self: flex-end;
+}

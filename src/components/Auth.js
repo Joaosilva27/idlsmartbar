@@ -25,6 +25,7 @@ export const Auth = props => {
     try {
       const result = await signInWithPopup(auth, provider);
       cookies.set("auth-token", result.user.refreshToken);
+      handleLoading();
       setIsAuth(true);
     } catch (err) {
       console.error(err);
