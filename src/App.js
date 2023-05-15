@@ -112,7 +112,7 @@ function App() {
     return <Loading />;
   }
 
-  if (!isAuth || !isAnonymousAuth) {
+  if (!isAuth) {
     return (
       <div className='App'>
         <Auth setIsLoading={setIsLoading} setIsAnonymousAuth={setIsAnonymousAuth} setIsAuth={setIsAuth} />
@@ -165,56 +165,58 @@ function App() {
               {room ? (
                 <Chat room={room} />
               ) : (
-                <div className='App__room'>
-                  <img alt='Logo for IDLogistics' className='IDL__Logo' src={IDLogo} />
-                  <img alt='TV Icon' className='TV__Logo' src={TVicon} />
+                isAuth && (
+                  <div className='App__room'>
+                    <img alt='Logo for IDLogistics' className='IDL__Logo' src={IDLogo} />
+                    <img alt='TV Icon' className='TV__Logo' src={TVicon} />
 
-                  <div className='App__centered'>
-                    <form>
-                      <label className='App__Room--Name'>Enter room name:</label>
-                      <br></br>
-                      <input spellCheck='false' className='App__input' ref={roomInputRef} />
-                      <br></br>
-                      <button
-                        className='App__button'
-                        onClick={() => {
-                          const newRoomId = roomInputRef.current.value;
-                          setRoom(newRoomId);
-                          handleSetRoom(newRoomId);
-                        }}
-                      >
-                        Enter Chat
-                      </button>
-                    </form>
-                  </div>
-                  <div className='rooms__container'>
-                    <div className='room__div'>
-                      <h3>Most visited rooms:</h3>
-                      <div className='room__flex'>
-                        {mostVisitedRooms.map(room => (
-                          <div key={room.id} className='room__row'>
-                            <h4>{room.id}</h4>
-                            <button
-                              className='App__button room__button'
-                              onClick={() => {
-                                setRoom(room.id);
-                                handleSetRoom(room.id);
-                              }}
-                            >
-                              Join
-                            </button>
-                            <div className='online__flex'>
-                              <p>
-                                <span className='online__counter'></span>
-                                {room.numUsers} {room.numUsers === 0 ? "People online" : room.numUsers > 1 ? "People online" : "Person online"}
-                              </p>
+                    <div className='App__centered'>
+                      <form>
+                        <label className='App__Room--Name'>Enter room name:</label>
+                        <br></br>
+                        <input spellCheck='false' className='App__input' ref={roomInputRef} />
+                        <br></br>
+                        <button
+                          className='App__button'
+                          onClick={() => {
+                            const newRoomId = roomInputRef.current.value;
+                            setRoom(newRoomId);
+                            handleSetRoom(newRoomId);
+                          }}
+                        >
+                          Enter Chat
+                        </button>
+                      </form>
+                    </div>
+                    <div className='rooms__container'>
+                      <div className='room__div'>
+                        <h3>Most visited rooms:</h3>
+                        <div className='room__flex'>
+                          {mostVisitedRooms.map(room => (
+                            <div key={room.id} className='room__row'>
+                              <h4>{room.id}</h4>
+                              <button
+                                className='App__button room__button'
+                                onClick={() => {
+                                  setRoom(room.id);
+                                  handleSetRoom(room.id);
+                                }}
+                              >
+                                Join
+                              </button>
+                              <div className='online__flex'>
+                                <p>
+                                  <span className='online__counter'></span>
+                                  {room.numUsers} {room.numUsers === 0 ? "People online" : room.numUsers > 1 ? "People online" : "Person online"}
+                                </p>
+                              </div>
                             </div>
-                          </div>
-                        ))}
+                          ))}
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                )
               )}
             </>
           }
