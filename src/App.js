@@ -163,7 +163,7 @@ function App() {
               </div>
 
               {room ? (
-                <Chat room={room} />
+                <Chat isAnonymousAuth={isAnonymousAuth} room={room} />
               ) : (
                 isAuth && (
                   <div className='App__room'>

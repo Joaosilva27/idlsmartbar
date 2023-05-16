@@ -8,6 +8,7 @@ import DefaultProfilePicture from "../images/default_pfp.jpeg";
 
 export const Chat = props => {
   const { room } = props;
+  const { isAnonymousAuth } = props;
   const [newMessage, setNewMessage] = useState("");
   const [messages, setMessages] = useState([]);
   const [hasNewMessage, setHasNewMessage] = useState(false);
@@ -82,7 +83,12 @@ export const Chat = props => {
 
       <div ref={messagesRef} className='messages'>
         {messages.map(message => (
-          <p className={`Chat__message ${message.user === auth.currentUser.displayName ? "flex-end" : ""}`}>
+          <p
+            key={message.id}
+            className={`Chat__message ${
+              message.user !== "Guest" && message.user === auth.currentUser.displayName && !isAnonymousAuth ? "flex-end" : ""
+            }`}
+          >
             {message.profilePicture ? (
               <img className='profile__picture' referrerpolicy='no-referrer' src={message.profilePicture} alt={message.user} />
             ) : (
