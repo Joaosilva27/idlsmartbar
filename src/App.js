@@ -17,6 +17,7 @@ import { AutomaticGuide } from "./components/AutomaticGuide";
 import { SamsungGuide } from "./components/SamsungGuide";
 import { LgGuide } from "./components/LgGuide";
 import { SonyGuide } from "./components/SonyGuide";
+import { SonyManual } from "./components/SonyManual";
 import { PhillipsGuide } from "./components/PhillipsGuide";
 import { TclGuide } from "./components/TclGuide";
 import { HisenseGuide } from "./components/HisenseGuide";
@@ -231,6 +232,7 @@ function App() {
         <Route path='calibration-guide/lg' element={<LgGuide signUserOut={signUserOut} />} />
         <Route path='calibration-guide/lg/full-guide' element={<LgFullGuide signUserOut={signUserOut} />} />
         <Route path='calibration-guide/sony' element={<SonyGuide signUserOut={signUserOut} />} />
+        <Route path='calibration-guide/sony/manual' element={<SonyManual />} />
         <Route path='calibration-guide/phillips' element={<PhillipsGuide signUserOut={signUserOut} />} />
         <Route path='calibration-guide/tcl' element={<TclGuide signUserOut={signUserOut} />} />
         <Route path='calibration-guide/hisense' element={<HisenseGuide signUserOut={signUserOut} />} />

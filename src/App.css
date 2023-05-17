@@ -161,6 +161,10 @@ element::-webkit-scrollbar {
   margin-left: 1rem;
 }
 
+.note {
+  color: #ffd700;
+}
+
 h3 {
   border-bottom: 3px solid black;
 }

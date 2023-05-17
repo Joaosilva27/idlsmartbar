@@ -4,6 +4,8 @@ import { useState } from "react";
 import PdfDownloader from "./PdfDownloader";
 import SonyBox from "../images/sonyTV.png";
 import SonyPDF from "../documents/Sony_Report.pdf";
+import SonyTemplateColors from "../documents/Sony_Template_Colors.docx";
+import SonyTemplateNoColors from "../documents/Sony_Template_NoColor.docx";
 import "../styles/SonyGuide.css";
 
 export const SonyGuide = () => {
@@ -15,28 +17,30 @@ export const SonyGuide = () => {
         <div>
           <div className='lg__container'>
             <h1 style={{ textAlign: "center" }}>SONY GUIDE</h1>
-            <div style={{ display: "flex", alignItems: "center", height: "70vh" }}>
+            <div style={{ display: "flex", alignItems: "center", height: "75vh" }}>
               <div className='row__container'>
                 <div>
                   <button onClick={() => setShortGuide(true)} style={{ color: "white" }} className='button__guides animation'>
                     Short Guide
                   </button>
-                  <Link to='/calibration-guide/lg/full-guide'>
+
+                  <Link to='/calibration-guide/sony/manual'>
                     <button style={{ color: "white" }} className='button__guides animation'>
-                      Full Guide
+                      Manual Guide
                     </button>
                   </Link>
 
-                  <button style={{ color: "white" }} className='button__guides animation'>
-                    Manual Guide
-                  </button>
                   <div className='row__h4'>
                     <PdfDownloader fileName='Sony Report Example' fileUrl={SonyPDF} />
 
                     <h4 style={{ marginLeft: "2rem" }}>Word Document Guide</h4>
                   </div>
                 </div>
-                <img className='lg__box' alt='LG TV Box' src={SonyBox} />
+                <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                  <img className='lg__box' alt='LG TV Box' src={SonyBox} />
+                  <PdfDownloader fileName='Sony Template (with Colors)' fileUrl={SonyTemplateColors} />
+                  <PdfDownloader fileName='Sony Template (without Colors)' fileUrl={SonyTemplateNoColors} />
+                </div>
               </div>
             </div>
           </div>

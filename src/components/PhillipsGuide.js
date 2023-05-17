@@ -60,7 +60,10 @@ export const PhillipsGuide = ({ signUserOut }) => {
                     <span className='li__color'>Turn the TV on and select "English" or "Dutch" as the language</span>
                   </li>
                   <li>
-                    <span className='li__color'>Skip the Pairing by pressing "OK" on the TV remote</span>
+                    <span className='li__color'>
+                      Skip the Pairing by pressing "OK" on the TV remote &#40;if the Phillips model is older, skipping is not an option. Simply hold
+                      the source button for a few seconds or keep pressing it until the pairing is complete&#41;
+                    </span>
                   </li>
                   <li>
                     <span className='li__color'>Select "Later"</span>

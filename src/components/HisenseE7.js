@@ -62,13 +62,13 @@ export const HisenseE7 = () => {
                   'White Balance' and start doing the White Balance.
                   <br></br>
                   <br></br>
-                  &#40;NOTE1: While other TV's have the white balance menu starting with 'Gain' and then 'Offset', Hisense shows the 'Offset' first in
-                  the menu. Which means that in the menu the first three R G B colors are 'Offset'&#40;30&#41; and the last three R G B are
-                  'Gain'&#40;80&#41; However this is just aestethic, we do the White Balance as every other TV, by starting off with '80' and then
-                  '30'&#41;
+                  &#40;<span className='note'>NOTE1:</span> While other TV's have the white balance menu starting with 'Gain' and then 'Offset',
+                  Hisense shows the 'Offset' first in the menu. Which means that in the menu the first three R G B colors are 'Offset'&#40;30&#41; and
+                  the last three R G B are 'Gain'&#40;80&#41; However this is just aestethic, we do the White Balance as every other TV, by starting
+                  off with '80' and then '30'&#41;
                   <br></br>
-                  <br></br>&#40;NOTE2: This model does not allow for the R G B values to be perfectly balanced, so just try getting the White Balance
-                  bars as low as you can &#40;if it goes a bit above the green line that's fine&#41;&#41;{" "}
+                  <br></br>&#40;<span className='note'>NOTE2:</span> This model does not allow for the R G B values to be perfectly balanced, so just
+                  try getting the White Balance bars as low as you can &#40;if it goes a bit above the green line that's fine&#41;&#41;{" "}
                 </span>
               </li>
               <li>
