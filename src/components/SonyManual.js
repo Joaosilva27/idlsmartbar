@@ -31,8 +31,8 @@ export const SonyManual = () => {
                   Mode'&#41; <br></br>
                   <br></br>
                   &#40;<span className='note'>NOTE1:</span> Please, make sure to always turn off Motionflow, regardless of the TV being
-                  Automatic/Manual. This is a crucial step in order to get a perfect calibration. While we can leave all the other settings ON and
-                  still achieve good results, if we leave the 'Motionflow' ON we will never have an ideal calibration.&#41;
+                  Automatic/Manual. This is a crucial step in order to get a perfect calibration. While it is possible to leave all the other settings
+                  ON and still achieve good results, if we leave the 'Motionflow' ON we will never have an ideal calibration.&#41;
                 </span>
                 <br></br>
                 <br></br>
