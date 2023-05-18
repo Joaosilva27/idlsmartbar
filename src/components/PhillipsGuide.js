@@ -119,7 +119,19 @@ export const PhillipsGuide = ({ signUserOut }) => {
                     <span className='li__color'>Once it's connected, leave only "SDR Calibration" selected, and click "Start AutoCal"</span>
                   </li>
                   <li>
-                    <span className='li__color'>!!!TO-DO: FINISH WRITING LAST STEPS.!!! </span>
+                    <span className='li__color'>
+                      After the calibration is finished, navigate to HDMI2 and press the 'Settings' button &#8594; 'Frequent Settings' &#8594; 'All
+                      Settings' &#8594; 'AI Picture Style' &#8594; 'Calman'
+                    </span>
+                  </li>
+                  <li>
+                    <span className='li__color'>Repeat the last step for HDMI3 and HDMI4 and write the TV Report</span>
+                  </li>
+                  <li>
+                    <span className='li__color'>
+                      Change the language to Dutch by pressing the 'Settings' button &#8594; 'Frequent Settings' &#8594; 'All Settings' &#8594;
+                      'Region and Languages' &#8594; 'Languages' &#8594; 'Menu Language' &#8594; 'Nederlands'
+                    </span>
                   </li>
                 </ol>
               </div>
