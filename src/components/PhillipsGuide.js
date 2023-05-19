@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import PhillipsBox from "../images/phillipsTV.png";
 import PhillipsReport from "../documents/Phillips_Report.pdf";
+import PhillipsTemplateLED from "../documents/Phillips_Template_Led.docx";
+import PhillipsTemplateOLED from "../documents/Phillips_Template_Oled.docx";
 import PdfDownloader from "./PdfDownloader";
 import "../styles/PhillipsGuide.css";
 
@@ -34,7 +36,11 @@ export const PhillipsGuide = ({ signUserOut }) => {
                     <h4 style={{ marginLeft: "2rem" }}>Word Document Guide</h4>
                   </div>
                 </div>
-                <img className='lg__box' alt='LG TV Box' src={PhillipsBox} />
+                <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+                  <img style={{ marginBottom: "-2rem" }} className='lg__box' alt='LG TV Box' src={PhillipsBox} />
+                  <PdfDownloader fileName='Phillips OLED Template' fileUrl={PhillipsTemplateOLED} />
+                  <PdfDownloader fileName='Phillips LED Template' fileUrl={PhillipsTemplateLED} />
+                </div>
               </div>
             </div>
           </div>
