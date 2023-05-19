@@ -71,6 +71,7 @@ export const HisenseE7 = () => {
                   the green line, that's fine&#41; because this model does not allow for the R G B values to be precisely balanced.&#41;
                 </span>
               </li>
+              <br></br>
               <li>
                 <span className='li__color'>
                   After finishing the White Balance, don't do the 'Color Management' and skip straight to the last page where you can do the final

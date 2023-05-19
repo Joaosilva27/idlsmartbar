@@ -19,6 +19,7 @@ import { LgGuide } from "./components/LgGuide";
 import { SonyGuide } from "./components/SonyGuide";
 import { SonyManual } from "./components/SonyManual";
 import { PhillipsGuide } from "./components/PhillipsGuide";
+import { PhillipsManual } from "./components/PhillipsManual";
 import { TclGuide } from "./components/TclGuide";
 import { HisenseGuide } from "./components/HisenseGuide";
 import { HisenseManual } from "./components/HisenseManual";
@@ -31,6 +32,7 @@ import Cookies from "universal-cookie";
 import { useState, useRef } from "react";
 import { LgFullGuide } from "./components/LgFullGuide";
 import { Guide } from "./components/Guide";
+import { PhillipsManualOled } from "./components/PhillipsManualOled";
 const cookies = new Cookies();
 
 function App() {
@@ -225,20 +227,22 @@ function App() {
         <Route path='/' element={<App />} />
         <Route path='/loading' element={<Loading />}></Route>
         <Route path='/guides' element={<Guide />} />
-        <Route path='/calibration-guide' element={<CalibrationGuide signUserOut={signUserOut} />} />
-        <Route path='/calibration-guide/manual-guide' element={<ManualGuide signUserOut={signUserOut} />} />
-        <Route path='calibration-guide/automatic-guide' element={<AutomaticGuide signUserOut={signUserOut} />} />
-        <Route path='calibration-guide/samsung' element={<SamsungGuide signUserOut={signUserOut} />} />
-        <Route path='calibration-guide/lg' element={<LgGuide signUserOut={signUserOut} />} />
-        <Route path='calibration-guide/lg/full-guide' element={<LgFullGuide signUserOut={signUserOut} />} />
-        <Route path='calibration-guide/sony' element={<SonyGuide signUserOut={signUserOut} />} />
+        <Route path='/calibration-guide' element={<CalibrationGuide />} />
+        <Route path='/calibration-guide/manual-guide' element={<ManualGuide />} />
+        <Route path='calibration-guide/automatic-guide' element={<AutomaticGuide />} />
+        <Route path='calibration-guide/samsung' element={<SamsungGuide />} />
+        <Route path='calibration-guide/lg' element={<LgGuide />} />
+        <Route path='calibration-guide/lg/full-guide' element={<LgFullGuide />} />
+        <Route path='calibration-guide/sony' element={<SonyGuide />} />
         <Route path='calibration-guide/sony/manual' element={<SonyManual />} />
-        <Route path='calibration-guide/phillips' element={<PhillipsGuide signUserOut={signUserOut} />} />
-        <Route path='calibration-guide/tcl' element={<TclGuide signUserOut={signUserOut} />} />
-        <Route path='calibration-guide/hisense' element={<HisenseGuide signUserOut={signUserOut} />} />
+        <Route path='calibration-guide/phillips' element={<PhillipsGuide />} />
+        <Route path='calibration-guide/phillips/manual' element={<PhillipsManual />} />
+        <Route path='calibration-guide/phillips/manual/oled' element={<PhillipsManualOled />} />
+        <Route path='calibration-guide/tcl' element={<TclGuide />} />
+        <Route path='calibration-guide/hisense' element={<HisenseGuide />} />
         <Route path='calibration-guide/hisense/manual' element={<HisenseManual />} />
         <Route path='calibration-guide/hisense/manual/e7' element={<HisenseE7 />} />
-        <Route path='calibration-guide/ok' element={<OkGuide signUserOut={signUserOut} />} />
+        <Route path='calibration-guide/ok' element={<OkGuide />} />
       </Routes>
     </>
   );

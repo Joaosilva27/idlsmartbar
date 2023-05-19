@@ -21,15 +21,13 @@ export const PhillipsGuide = ({ signUserOut }) => {
                   <button onClick={() => setShortGuide(true)} style={{ color: "white" }} className='button__guides animation'>
                     Short Guide
                   </button>
-                  <Link to='/calibration-guide/lg/full-guide'>
+
+                  <Link to='/calibration-guide/phillips/manual'>
                     <button style={{ color: "white" }} className='button__guides animation'>
-                      Full Guide
+                      Manual Guide
                     </button>
                   </Link>
 
-                  <button style={{ color: "white" }} className='button__guides animation'>
-                    Manual Guide
-                  </button>
                   <div className='row__h4'>
                     <PdfDownloader fileName='Phillips Report Example' fileUrl={PhillipsReport} />
 
