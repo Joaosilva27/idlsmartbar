@@ -12,97 +12,73 @@ export const OkGuideManual = () => {
           <div className='short__guide__container'>
             <ol>
               <li>
-                <span className='li__color'>Start off by selecting the Language as either English or Dutch </span>
-              </li>
-              <li>
-                <span className='li__color'>Press the the 'right arrow' button on the TV remote to skip and select 'Skip'</span>
-              </li>
-              <li>
-                <span className='li__color'>Select 'Netherlands' as the country</span>
-              </li>
-              <li>
-                <span className='li__color'>Select HDMI1 as your 'Primary Input Source'</span>
-              </li>
-              <li>
-                <span className='li__color'>Start the first reading &#40;with color management selected&#41;</span>
-              </li>
-              <li>
-                <span className='li__color'>Press the 'Home' button and the 'top arrow' on the TV remote to navigate to the settings</span>
+                <span className='li__color'>Start off by selecting the Language as either English or Dutch and the Location as 'Netherlands'.</span>
               </li>
               <li>
                 <span className='li__color'>
-                  Picture &#8594; Picture Mode &#8594; Cinema Day &#40;if a 'Energy Efficiency Notice' pop-up appears, select 'confirm'&#41;
+                  Press 'OK to skip the remote pairing or pair it by pressing the lower volume button and the downside arrow at the same time.
                 </span>
               </li>
               <li>
                 <span className='li__color'>
-                  Scroll all the way down and select 'Picture Mode Settings' &#8594; Apply Picture Settings &#8594; All Sources
+                  Select 'Skip' &#8594; scroll all the way down and select 'Skip' &#8594; 'Accept' &#8594; 'Yes' &#8594; 'No' &#8594; 'Android TV'.
+                </span>
+              </li>
+              <li>
+                <span className='li__color'>Use the right arrow on the remote to navigate through this menu &#8594; 'Accept'.</span>
+              </li>
+              <li>
+                <span className='li__color'>Choose '1 2 3 4' as the input password, and write it one more time to confirm it.</span>
+              </li>
+              <li>
+                <span className='li__color'>Select 'Home' &#8594; 'Yes' &#8594; 'Off' &#8594; 'Cable' &#8594; 'Ziggo' &#8594; 'Skip Scan'.</span>
+              </li>
+              <li>
+                <span className='li__color'>Select HDMI1 and start the first reading with Color Management enabled on Calman.</span>
+              </li>
+              <li>
+                <span className='li__color'>Press the 'Settings' button &#8594; 'Picture' &#8594; 'Picture Mode' &#8594; 'User' &#8594; 'OK'.</span>
+              </li>
+              <li>
+                <span className='li__color'>
+                  Navigate to 'Advanced Video' and turn off all the filters. &#40;'DNR', 'MPEG NR', 'Adaptive Luma Control', 'DI Film Mode'.&#41;
                 </span>
               </li>
               <li>
                 <span className='li__color'>
-                  We can now start by turning off every picture filter settings. This includes in order: 'Adaptive Contrast', 'Ultra Smooth Motion',
-                  'Noise Reduction', 'MPEG Noise Reduction'
-                </span>
-              </li>
-              <li>
-                <span className='li__color'>Start doing the contrast as usual &#40;every bar visible besides the last two&#41;</span>
-              </li>
-              <li>
-                <span className='li__color'>Start the brightness pattern &#40;Brightness setting&#41;</span>
-              </li>
-              <li>
-                <span className='li__color'>
-                  Start measuring the luminance &#40;Select the 'Backlight' setting and press the 'down' arrow once on your TV Remote&#41;
+                  Go back and select 'Color Temperature' &#8594; 'Warm'. &#40;If it was already 'Warm' by default, leave it as it is.&#41;
                 </span>
               </li>
               <li>
                 <span className='li__color'>
-                  After setting the Luminance close to 230 as we can, go back to the settings menu, scroll down and select 'Expert Settings' &#8594;
-                  'White Balance' and start doing the White Balance.
+                  You can now start with the usual manual procedures. Start with 'Contrast Pattern', followed by 'Brightness
+                  Pattern'&#40;Brightness&#41; and 'Luminance'&#40;Backlight.&#41;
+                </span>
+              </li>
+              <li>
+                <span className='li__color'>
+                  Inside 'Picture' settings &#8594; 'Color Tuner' &#8594; enable it by pressing 'OK' and start the White Balance procedure.
+                </span>
+              </li>
+              <li>
+                <span className='li__color'>
+                  You can now skip to the last Calman page and start the last 'Series Reading', and afterwards begin the Color Management by playing
+                  with the 'HUE' and 'Saturation' values of each color. The easiest way to calibrate the colors this way is to do a continuous reading
+                  on the last reading page and change both values until each color is below the yellow line.
                   <br></br>
                   <br></br>
-                  &#40;<span className='note'>NOTE1:</span> Hisense displays the 'Offset' first in the menu, while majority of the other TV
-                  brands start the white balance menu with 'Gain' and then 'Offset. Therefore, the first three R G B colors in the menu are "Offset"
-                  &#40;30&#41;, while the last three R G B colors are "Gain" &#40;80&#41;. However, this is merely aesthetic; we perform the White
-                  Balance in the same way that every other TV does, by starting with "80" and then "30".&#41;
+                  &#40;<span className='note'>NOTE1:</span> If a situation happens where you choose one color, start a 'Continuous Reading', and the
+                  color disappears after a few seconds, follow these steps to fix the problem: Stop the reading &#8594; Click on the color graph
+                  &#8594; Select the color on the bottom left of the screen &#8594; On the top right of the screen, click on the arrow next to
+                  'PatternForge' &#8594; 'Window Size' &#8594; 'Full 100%'.&#41;
                   <br></br>
-                  <br></br>&#40;<span className='note'>NOTE2:</span> Try to get the White Balance bars as low as you can &#40;if it goes slightly past
-                  the green line, that's fine&#41; because this model does not allow for the R G B values to be precisely balanced.&#41;
                 </span>
               </li>
               <br></br>
               <li>
                 <span className='li__color'>
-                  After finishing the White Balance, don't do the 'Color Management' and skip straight to the last page where you can do the final
-                  reading and start the reading. &#40;With the E7 Model the colors usually come looking great from factory settings. If the results
-                  are good, skip to step 16. If they're bad keep following the steps.&#41;
-                </span>
-              </li>
-              <li>
-                <span className='li__color'>
-                  Go to 'Settings' &#8594; 'Picture Mode Settings' &#8594; 'Expert Settings' &#8594; 'Color Tuner'. &#40;Here we can do the color
-                  management of each color by playing with the 'HUE' and the 'Saturation' values. The easiest way to calibrate the colors this way is
-                  to do a continuous reading on the last reading page and change both values until each color is below the yellow line&#41;{" "}
-                </span>
-              </li>
-              <li>
-                <span className='li__color'>
-                  Inside 'Picture Mode Settings' set the 'Sharpness' to your liking by comparing it with the family picture provided by Calman.
-                  Usually 5 is a great value, but set it as it best fits your TV
-                </span>
-              </li>
-              <li>
-                <span className='li__color'>
-                  Press the 'Input/Sources' button on the TV remote and go to HDMI2 &#8594; 'Settings' &#8594; 'Picture Mode' &#8594; 'Cinema Day'.
-                  &#40;Another different feature in Hisense is that once you change the picture mode for HDMI2, it automatically applies it for HDMI3
-                  and HDMI4, which means we only do this step for HDMI2.
-                </span>
-              </li>
-              <li>
-                <span className='li__color'>
-                  Write both TV Reports on the laptop and lastly change the language to Dutch by going to 'Settings' &#8594; 'System' &#8594;
-                  'Language and Location' &#8594; 'Menu Language' &#8594; 'Netherlands'
+                  After you are done with Color Management, write both TV reports and change the language to Dutch by pressing the 'Home' button
+                  &#8594; 'Settings' &#8594; 'Device Preferences' &#8594; 'Language' &#8594; 'Nederlands'.
                 </span>
               </li>
             </ol>
