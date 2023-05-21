@@ -1,59 +1,59 @@
 import React from "react";
-import HisenseE7Box from "../images/hisense_e7.png";
 import PdfDownloader from "./PdfDownloader";
-import HisenseE7Report from "../documents/Hisense_Report.pdf";
+import OkBox from "../images/OkBox.png";
+import OkReport from "../documents/Ok_Report.pdf";
 
-export const HisenseE7 = () => {
+export const OkGuideManual = () => {
   return (
     <div>
-      <h2 style={{ textAlign: "center" }}>E7 SERIES MANUAL GUIDE</h2>
+      <h2 style={{ textAlign: "center" }}>OK MANUAL GUIDE</h2>
       <div style={{ marginTop: "1rem" }}>
         <div className='p__container'>
           <div className='short__guide__container'>
             <ol>
               <li>
-                <span className='li__color'>Start off by selecting the Language as either English or Dutch. </span>
+                <span className='li__color'>Start off by selecting the Language as either English or Dutch </span>
               </li>
               <li>
-                <span className='li__color'>Press the the 'right arrow' button on the TV remote to skip and select 'Skip'.</span>
+                <span className='li__color'>Press the the 'right arrow' button on the TV remote to skip and select 'Skip'</span>
               </li>
               <li>
-                <span className='li__color'>Select 'Netherlands' as the country.</span>
+                <span className='li__color'>Select 'Netherlands' as the country</span>
               </li>
               <li>
-                <span className='li__color'>Select HDMI1 as your 'Primary Input Source'.</span>
+                <span className='li__color'>Select HDMI1 as your 'Primary Input Source'</span>
               </li>
               <li>
-                <span className='li__color'>Start the first reading &#40;with color management selected.&#41;</span>
+                <span className='li__color'>Start the first reading &#40;with color management selected&#41;</span>
               </li>
               <li>
-                <span className='li__color'>Press the 'Home' button and the 'top arrow' on the TV remote to navigate to the settings.</span>
+                <span className='li__color'>Press the 'Home' button and the 'top arrow' on the TV remote to navigate to the settings</span>
               </li>
               <li>
                 <span className='li__color'>
-                  Picture &#8594; Picture Mode &#8594; Cinema Day &#40;if a 'Energy Efficiency Notice' pop-up appears, select 'confirm'.&#41;
+                  Picture &#8594; Picture Mode &#8594; Cinema Day &#40;if a 'Energy Efficiency Notice' pop-up appears, select 'confirm'&#41;
                 </span>
               </li>
               <li>
                 <span className='li__color'>
-                  Scroll all the way down and select 'Picture Mode Settings' &#8594; Apply Picture Settings &#8594; All Sources.
+                  Scroll all the way down and select 'Picture Mode Settings' &#8594; Apply Picture Settings &#8594; All Sources
                 </span>
               </li>
               <li>
                 <span className='li__color'>
                   We can now start by turning off every picture filter settings. This includes in order: 'Adaptive Contrast', 'Ultra Smooth Motion',
-                  'Noise Reduction', 'MPEG Noise Reduction'.
+                  'Noise Reduction', 'MPEG Noise Reduction'
                 </span>
               </li>
               <li>
-                <span className='li__color'>Start doing the contrast as usual &#40;every bar visible besides the last two.&#41;</span>
+                <span className='li__color'>Start doing the contrast as usual &#40;every bar visible besides the last two&#41;</span>
               </li>
               <li>
-                <span className='li__color'>Start the brightness pattern &#40;Brightness setting.&#41;</span>
+                <span className='li__color'>Start the brightness pattern &#40;Brightness setting&#41;</span>
               </li>
               <li>
                 <span className='li__color'>
-                  Start measuring the luminance &#40;Select the 'Backlight' setting and press the 'down' arrow once on your TV Remote.&#41;
+                  Start measuring the luminance &#40;Select the 'Backlight' setting and press the 'down' arrow once on your TV Remote&#41;
                 </span>
               </li>
               <li>
@@ -83,13 +83,13 @@ export const HisenseE7 = () => {
                 <span className='li__color'>
                   Go to 'Settings' &#8594; 'Picture Mode Settings' &#8594; 'Expert Settings' &#8594; 'Color Tuner'. &#40;Here we can do the color
                   management of each color by playing with the 'HUE' and the 'Saturation' values. The easiest way to calibrate the colors this way is
-                  to do a continuous reading on the last reading page and change both values until each color is below the yellow line.&#41;
+                  to do a continuous reading on the last reading page and change both values until each color is below the yellow line&#41;{" "}
                 </span>
               </li>
               <li>
                 <span className='li__color'>
                   Inside 'Picture Mode Settings' set the 'Sharpness' to your liking by comparing it with the family picture provided by Calman.
-                  Usually 5 is a great value, but set it as it best fits your TV.
+                  Usually 5 is a great value, but set it as it best fits your TV
                 </span>
               </li>
               <li>
@@ -102,14 +102,14 @@ export const HisenseE7 = () => {
               <li>
                 <span className='li__color'>
                   Write both TV Reports on the laptop and lastly change the language to Dutch by going to 'Settings' &#8594; 'System' &#8594;
-                  'Language and Location' &#8594; 'Menu Language' &#8594; 'Netherlands'.
+                  'Language and Location' &#8594; 'Menu Language' &#8594; 'Netherlands'
                 </span>
               </li>
             </ol>
           </div>
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-            <img style={{ width: "23rem" }} className='lg__box' alt='Hisense E7 TV Box' src={HisenseE7Box} />
-            <PdfDownloader fileName='Hisense E7 Report' fileUrl={HisenseE7Report} />
+            <img style={{ width: "23rem" }} className='lg__box' alt='OK TV Box' src={OkBox} />
+            <PdfDownloader fileName='OK Report' fileUrl={OkReport} />
           </div>
         </div>
       </div>

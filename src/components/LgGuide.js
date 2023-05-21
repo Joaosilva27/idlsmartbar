@@ -49,43 +49,43 @@ export const LgGuide = () => {
             <div className='p__container'>
               <ol>
                 <li>
-                  <span className='li__color'>Turn on the TV and select the language/country</span>
+                  <span className='li__color'>Turn on the TV and select the language/country.</span>
                 </li>
                 <li>
-                  <span className='li__color'>Select "exit first user" and confirm by selecting "yes"</span>
+                  <span className='li__color'>Select "exit first user" and confirm by selecting "yes".</span>
                 </li>
                 <li>
-                  <span className='li__color'>Open settings, go to picture mode and select "Expert Bright"</span>
+                  <span className='li__color'>Open settings, go to picture mode and select "Expert Bright".</span>
                 </li>
                 <li>
-                  <span className='li__color'>Turn off energy saving</span>
+                  <span className='li__color'>Turn off energy saving.</span>
                 </li>
                 <li>
-                  <span className='li__color'>Go back to HDMI 1 and start the first reading</span>
+                  <span className='li__color'>Go back to HDMI 1 and start the first reading.</span>
                 </li>
                 <li>
-                  <span className='li__color'>After the reading is finished, on the laptop click "Find TV"</span>
+                  <span className='li__color'>After the reading is finished, on the laptop click "Find TV".</span>
                 </li>
                 <li>
-                  <span className='li__color'>When the unique code shows up on the TV screen, type it into the laptop</span>
+                  <span className='li__color'>When the unique code shows up on the TV screen, type it into the laptop.</span>
                 </li>
                 <li>
-                  <span className='li__color'>Leave the only option selected as "Expert Day" and start the last reading</span>
+                  <span className='li__color'>Leave the only option selected as "Expert Day" and start the last reading.</span>
                 </li>
                 <li>
-                  <span className='li__color'>After the reading is finished, create the report</span>
+                  <span className='li__color'>After the reading is finished, create the report.</span>
                 </li>
                 <li>
-                  <span className='li__color'>Go to every HDMI and change it's picture setting to "Expert Bright"</span>
+                  <span className='li__color'>Go to every HDMI and change it's picture setting to "Expert Bright".</span>
                 </li>
                 <li>
-                  <span className='li__color'>Go back to HDMI 1 and start the second reading</span>
+                  <span className='li__color'>Go back to HDMI 1 and start the second reading.</span>
                 </li>
                 <li>
-                  <span className='li__color'>Go to advanced settings and select "Apply to all inputs"</span>
+                  <span className='li__color'>Go to advanced settings and select "Apply to all inputs".</span>
                 </li>
                 <li>
-                  <span className='li__color'>Change the language to dutch</span>
+                  <span className='li__color'>Change the language to dutch.</span>
                 </li>
               </ol>
               <img className='lg__box' alt='LG TV Box' src={LGbox} />

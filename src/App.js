@@ -33,6 +33,8 @@ import { useState, useRef } from "react";
 import { LgFullGuide } from "./components/LgFullGuide";
 import { Guide } from "./components/Guide";
 import { PhillipsManualOled } from "./components/PhillipsManualOled";
+import { OkGuideManual } from "./components/OkGuideManual";
+import { TclGuideManual } from "./components/TclGuideManual";
 const cookies = new Cookies();
 
 function App() {
@@ -239,10 +241,12 @@ function App() {
         <Route path='calibration-guide/phillips/manual' element={<PhillipsManual />} />
         <Route path='calibration-guide/phillips/manual/oled' element={<PhillipsManualOled />} />
         <Route path='calibration-guide/tcl' element={<TclGuide />} />
+        <Route path='calibration-guide/tcl/manual' element={<TclGuideManual />} />
         <Route path='calibration-guide/hisense' element={<HisenseGuide />} />
         <Route path='calibration-guide/hisense/manual' element={<HisenseManual />} />
         <Route path='calibration-guide/hisense/manual/e7' element={<HisenseE7 />} />
         <Route path='calibration-guide/ok' element={<OkGuide />} />
+        <Route path='calibration-guide/ok/manual' element={<OkGuideManual />} />
       </Routes>
     </>
   );

@@ -15,19 +15,14 @@ export const TclGuide = () => {
         <div>
           <div className='lg__container'>
             <h1 style={{ textAlign: "center" }}>TCL</h1>
-            <div style={{ display: "flex", alignItems: "center", height: "70vh" }}>
+            <div style={{ display: "flex", alignItems: "center", height: "75vh" }}>
               <div className='row__container'>
                 <div style={{ marginTop: "2rem" }}>
                   <button onClick={() => setShortGuide(true)} style={{ color: "white" }} className='button__guides animation'>
                     Short Guide
                   </button>
-                  <Link to='/calibration-guide/tcl'>
-                    <button style={{ color: "white" }} className='button__guides animation'>
-                      Full Guide
-                    </button>
-                  </Link>
 
-                  <Link to='/calibration-guide/tcl'>
+                  <Link to='/calibration-guide/tcl/manual'>
                     <button style={{ color: "white" }} className='button__guides animation'>
                       Manual Guide
                     </button>
