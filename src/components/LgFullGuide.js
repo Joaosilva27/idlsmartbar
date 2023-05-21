@@ -1,7 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-export const LgFullGuide = ({ signUserOut }) => {
+export const LgFullGuide = () => {
   return (
     <div>
       <h1>full guide</h1>

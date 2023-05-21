@@ -8,7 +8,7 @@ import PhillipsTemplateOLED from "../documents/Phillips_Template_Oled.docx";
 import PdfDownloader from "./PdfDownloader";
 import "../styles/PhillipsGuide.css";
 
-export const PhillipsGuide = ({ signUserOut }) => {
+export const PhillipsGuide = () => {
   const [shortGuide, setShortGuide] = useState(false);
 
   return (
