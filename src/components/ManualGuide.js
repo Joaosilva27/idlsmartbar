@@ -1,8 +1,7 @@
 import React from "react";
 import "../styles/ManualGuide.css";
-import { Link } from "react-router-dom";
 
-export const ManualGuide = ({ signUserOut }) => {
+export const ManualGuide = () => {
   return (
     <div>
       <div className='manual__container'>
