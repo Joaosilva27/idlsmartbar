@@ -39,18 +39,19 @@ export const SonyManual = () => {
               </li>
               <li>
                 <span className='li__color'>
-                  Set the 'Colour Space' to 'sRGB/B.T.709' and then it is possible to start with the usual manual procedure.
+                  Set the 'Colour Space' to 'sRGB/B.T.709' and now it is possible to start with the usual manual procedure.
                 </span>
               </li>
               <li>
                 <span className='li__color'>
-                  Instead of measuring the 'Contrast' yourself, set it to 84.
+                  In the 'Brightness' section, navigate to the last setting called 'Adv. contrast enchancer' and set it to 'Medium'. You can now start
+                  doing the 'Contrast Pattern'.
                   <br></br>
                   <br></br>
-                  &#40;<span className='note'>OPTINAL READING NOTE1:</span> You will notice that even if you try changing the 'Contrast' values, the
-                  bars will never change, that's due to our 'Picture Mode' being 'Custom'. We could technically change it to 'Movie' and you would see
-                  the bars changing accordingly. However, the 'Cinema' picture mode may cause some issues with our 'Gamma', unless the TV model is
-                  'XR'. Nevertheless, please always use 'Custom' in order to avoid any unnecessary problems.&#41;
+                  &#40;<span className='note'>OPTINAL READING NOTE1:</span>&nbsp;The reason why you set this setting to 'Medium', is so you can
+                  actually change the 'Contrast' the way you intend to. In the SONY models and a few Samsung TV's the 'Contrast' setting functions as
+                  a brightness setting, therefore you cannot see the Calman contrast bars/lines changing. By enabling the 'Adv. contrast enchancer'
+                  you are able to see the bars/lines and make a accurate contrast for each individual TV.&#41;
                 </span>
                 <br></br>
                 <br></br>
@@ -103,8 +104,18 @@ export const SonyManual = () => {
                   adjustment'. &#40;Here we can calibrate our colors by playing with the 'HUE' and 'Saturation' values of each color. The easiest way
                   to calibrate colors this way is to do a 'Continuous Reading' on the last page and changing each color values until all of them are
                   below the yellow line.&#41;
+                  <br></br>
+                  <br></br>
+                  &#40;<span className='note'>NOTE2:</span>&nbsp;
+                  <span className='li__color'>
+                    If your SONY model does not have the setting to calibrate colors, this means you either need to create a better White Balance or
+                    change your 'Target Exponent' value in Calman settings. &#40;Try either 2.2 or 2.4 and press the 'Enter' key in your keyboard. To
+                    access this setting click on the 'Settings' icon on the top-right side of the screen in Calman &#8594; 'Target Exponent' and set
+                    it to the value you desire.&#41;
+                  </span>
                 </span>
               </li>
+              <br></br>
               <li>
                 <span className='li__color'>
                   Apply all the 'Picture Settings' from HDMI1 to the other HDMI's the same way we do it in the Automatic Calibration, write both TV

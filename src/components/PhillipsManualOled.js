@@ -7,7 +7,7 @@ import HisenseE7Report from "../documents/Hisense_Report.pdf";
 export const PhillipsManualOled = () => {
   return (
     <div>
-      <h2 style={{ textAlign: "center" }}>PHILLIPS OLED MANUAL GUIDE</h2>
+      <h2 style={{ textAlign: "center" }}>PHILLIPS OLED/LED/THE ONE MANUAL GUIDE</h2>
       <div style={{ marginTop: "1rem" }}>
         <div className='p__container'>
           <div className='short__guide__container'>
@@ -123,7 +123,7 @@ export const PhillipsManualOled = () => {
           </div>
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
             <img style={{ width: "23rem" }} className='lg__box' alt='Hisense E7 TV Box' src={PhillipsBoxOled} />
-            <PdfDownloader fileName='Phillips OLED Report' fileUrl={HisenseE7Report} />
+            <PdfDownloader fileName='Phillips Report' fileUrl={HisenseE7Report} />
           </div>
         </div>
       </div>
