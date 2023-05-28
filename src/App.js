@@ -35,6 +35,7 @@ import { Guide } from "./components/Guide";
 import { PhillipsManualOled } from "./components/PhillipsManualOled";
 import { OkGuideManual } from "./components/OkGuideManual";
 import { TclGuideManual } from "./components/TclGuideManual";
+import { PhillipsGuide8007 } from "./components/PhillipsGuide8007";
 const cookies = new Cookies();
 
 function App() {
@@ -240,6 +241,7 @@ function App() {
         <Route path='calibration-guide/phillips' element={<PhillipsGuide />} />
         <Route path='calibration-guide/phillips/manual' element={<PhillipsManual />} />
         <Route path='calibration-guide/phillips/manual/oled' element={<PhillipsManualOled />} />
+        <Route path='calibration-guide/phillips/manual/8007' element={<PhillipsGuide8007 />} />
         <Route path='calibration-guide/tcl' element={<TclGuide />} />
         <Route path='calibration-guide/tcl/manual' element={<TclGuideManual />} />
         <Route path='calibration-guide/hisense' element={<HisenseGuide />} />

@@ -82,8 +82,8 @@ export const HisenseE7 = () => {
               <li>
                 <span className='li__color'>
                   Go to 'Settings' &#8594; 'Picture Mode Settings' &#8594; 'Expert Settings' &#8594; 'Color Tuner'. &#40;Here we can do the color
-                  management of each color by playing with the 'HUE' and the 'Saturation' values. The easiest way to calibrate the colors this way is
-                  to do a continuous reading on the last reading page and change both values until each color is below the yellow line.&#41;
+                  management of each color by playing with 'HUE', 'Saturation' and 'Brightness' values. The easiest way to calibrate the colors this
+                  way is to do a continuous reading on the last reading page and change both values until each color is below the yellow line.&#41;
                 </span>
               </li>
               <li>

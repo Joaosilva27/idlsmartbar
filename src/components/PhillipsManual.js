@@ -26,7 +26,7 @@ export const PhillipsManual = () => {
           <div className='div__card'>
             <h1 style={{ color: "white" }}>LED 8007</h1>
             <br></br>
-            <Link to='/calibration-guide/phillips/manual'>
+            <Link to='/calibration-guide/phillips/manual/8007'>
               <img style={{ width: "16.5rem" }} className='card__tv__image animation' alt='Phillips LED Model' src={PhillipsBoxLED} />
             </Link>
           </div>

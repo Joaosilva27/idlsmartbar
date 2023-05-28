@@ -63,8 +63,8 @@ export const OkGuideManual = () => {
               <li>
                 <span className='li__color'>
                   You can now skip to the last Calman page and start the last 'Series Reading', and afterwards begin the Color Management by playing
-                  with the 'HUE' and 'Saturation' values of each color. The easiest way to calibrate the colors this way is to do a continuous reading
-                  on the last reading page and change both values until each color is below the yellow line.
+                  with 'HUE', 'Saturation' and 'Brightness' values of each color. The easiest way to calibrate the colors this way is to do a
+                  continuous reading on the last reading page and change both values until each color is below the yellow line.
                   <br></br>
                   <br></br>
                   &#40;<span className='note'>NOTE1:</span> If a situation happens where you choose one color, start a 'Continuous Reading', and the
@@ -77,8 +77,8 @@ export const OkGuideManual = () => {
               <br></br>
               <li>
                 <span className='li__color'>
-                  After you are done with Color Management, write both TV reports and change the language to Dutch by pressing the 'Home' button
-                  &#8594; 'Settings' &#8594; 'Device Preferences' &#8594; 'Language' &#8594; 'Nederlands'.
+                  After you are done with Color Management and finished the last reading, write both TV reports and change the language to Dutch by
+                  pressing the 'Home' button &#8594; 'Settings' &#8594; 'Device Preferences' &#8594; 'Language' &#8594; 'Nederlands'.
                 </span>
               </li>
             </ol>
