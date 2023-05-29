@@ -15,14 +15,28 @@ export const HisenseE7 = () => {
                 <span className='li__color'>Start off by selecting the Language as either English or Dutch. </span>
               </li>
               <li>
+                <span>This step will change depending on which model you have:</span>
+                <br></br>
+                <br></br>
+                <span className='note'>a.</span>&nbsp;
                 <span className='li__color'>Press the the 'right arrow' button on the TV remote to skip and select 'Skip'.</span>
+                <br></br>
+                <span className='note'>b.</span>&nbsp;
+                <span className='li__color'>Select 'Start', scroll all the way down and select 'Skip'.</span>
               </li>
+              <br></br>
               <li>
                 <span className='li__color'>Select 'Netherlands' as the country.</span>
               </li>
               <li>
-                <span className='li__color'>Select HDMI1 as your 'Primary Input Source'.</span>
+                <span>This step will change depending on which model you have:</span>
+                <br></br>
+                <br></br>
+                <span className='note'>a.</span>&nbsp;<span className='li__color'>Select HDMI1 as your 'Primary Input Source'.</span>
+                <br></br>
+                <span className='note'>b.</span>&nbsp;<span className='li__color'>Select 'Switch Input' and select HDMI1.</span>
               </li>
+              <br></br>
               <li>
                 <span className='li__color'>Start the first reading &#40;with color management selected.&#41;</span>
               </li>
@@ -41,8 +55,8 @@ export const HisenseE7 = () => {
               </li>
               <li>
                 <span className='li__color'>
-                  We can now start by turning off every picture filter settings. This includes in order: 'Adaptive Contrast', 'Ultra Smooth Motion',
-                  'Noise Reduction', 'MPEG Noise Reduction'.
+                  We can now start by turning off every picture filter settings. This may include: 'Adaptive Contrast', 'Ultra Smooth Motion', 'Noise
+                  Reduction', 'MPEG Noise Reduction'.
                 </span>
               </li>
               <li>
@@ -68,7 +82,7 @@ export const HisenseE7 = () => {
                   Balance in the same way that every other TV does, by starting with "80" and then "30".&#41;
                   <br></br>
                   <br></br>&#40;<span className='note'>NOTE2:</span> Try to get the White Balance bars as low as you can &#40;if it goes slightly past
-                  the green line, that's fine&#41; because this model does not allow for the R G B values to be precisely balanced.&#41;
+                  the DeltaE 2000 green line, that's fine&#41; because this model does not allow for the R G B values to be precisely balanced.&#41;
                 </span>
               </li>
               <br></br>
@@ -77,8 +91,14 @@ export const HisenseE7 = () => {
                   After finishing the White Balance, don't do the 'Color Management' and skip straight to the last page where you can do the final
                   reading and start the reading. &#40;With the E7 Model the colors usually come looking great from factory settings. If the results
                   are good, skip to step 16. If they're bad keep following the steps.&#41;
+                  <br></br>
+                  <br></br>
+                  &#40;<span className='note'>NOTE3:</span>&nbsp;If your 'Gamma Adjustment' is 2.4 &#40;the default value from factory&#41; remember
+                  to also change it in Calman. To access this setting click on the 'Settings' icon on the top-right side of the screen in Calman →
+                  'Target Exponent' and set it to the value you desire.&#41;
                 </span>
               </li>
+              <br></br>
               <li>
                 <span className='li__color'>
                   Go to 'Settings' &#8594; 'Picture Mode Settings' &#8594; 'Expert Settings' &#8594; 'Color Tuner'. &#40;Here we can do the color
