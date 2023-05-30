@@ -17,18 +17,24 @@ export const LgGuide = () => {
             <div style={{ display: "flex", alignItems: "center", height: "80vh" }}>
               <div className='row__container'>
                 <div style={{ marginTop: "3rem" }}>
-                  <button onClick={() => setShortGuide(true)} style={{ color: "white" }} className='button__guides animation'>
-                    Short Guide
-                  </button>
-                  <Link to='/calibration-guide/lg/full-guide'>
-                    <button style={{ color: "white" }} className='button__guides animation'>
-                      Full Guide
+                  <div style={{ display: "flex" }}>
+                    <button onClick={() => setShortGuide(true)} style={{ color: "white" }} className='button__guides animation'>
+                      Short Guide
+                      <br></br>
+                      <p style={{ backgroundColor: "#1b171c", fontSize: "1rem" }}>&#40;automatic&#41;</p>
                     </button>
-                  </Link>
+                    <Link to='/calibration-guide/lg/full-guide'>
+                      <button style={{ color: "white" }} className='button__guides animation'>
+                        Full Guide
+                        <br></br>
+                        <p style={{ backgroundColor: "#1b171c", fontSize: "1rem" }}>&#40;automatic&#41;</p>
+                      </button>
+                    </Link>
 
-                  <button style={{ color: "white" }} className='button__guides animation'>
-                    Manual Guide
-                  </button>
+                    <button style={{ color: "white" }} className='button__guides animation'>
+                      Manual Guide
+                    </button>
+                  </div>
                   <div className='row__h4'>
                     <PdfDownloader fileName='LG Report Example' fileUrl={LG_Report} />
 

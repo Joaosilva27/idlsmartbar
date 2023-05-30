@@ -20,15 +20,19 @@ export const PhillipsGuide = () => {
             <div style={{ display: "flex", alignItems: "center", height: "80vh" }}>
               <div className='row__container'>
                 <div style={{ marginTop: "2rem" }}>
-                  <button onClick={() => setShortGuide(true)} style={{ color: "white" }} className='button__guides animation'>
-                    Short Guide
-                  </button>
-
-                  <Link to='/calibration-guide/phillips/manual'>
-                    <button style={{ color: "white" }} className='button__guides animation'>
-                      Manual Guide
+                  <div style={{ display: "flex" }}>
+                    <button onClick={() => setShortGuide(true)} style={{ color: "white" }} className='button__guides animation'>
+                      Short Guide
+                      <br></br>
+                      <p style={{ backgroundColor: "#1b171c", fontSize: "1rem" }}>&#40;automatic&#41;</p>
                     </button>
-                  </Link>
+
+                    <Link to='/calibration-guide/phillips/manual'>
+                      <button style={{ color: "white" }} className='button__guides animation'>
+                        Manual Guide
+                      </button>
+                    </Link>
+                  </div>
 
                   <div className='row__h4'>
                     <PdfDownloader fileName='Phillips Report Example' fileUrl={PhillipsReport} />
