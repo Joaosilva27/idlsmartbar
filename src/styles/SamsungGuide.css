@@ -17,11 +17,6 @@ li {
   color: #ef3342;
 }
 
-.li__color {
-  color: white;
-  text-decoration: underline;
-}
-
 .p__container {
   line-height: 2.5rem;
   display: flex;

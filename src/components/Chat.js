@@ -8,9 +8,11 @@ import DefaultProfilePicture from "../images/default_pfp.jpeg";
 
 export const Chat = props => {
   const { room } = props;
+  const { isAnonymousAuth } = props;
   const [newMessage, setNewMessage] = useState("");
   const [messages, setMessages] = useState([]);
   const [hasNewMessage, setHasNewMessage] = useState(false);
+  const lastMessage = messages[messages.length - 1];
 
   const messagesRef = useRef(null);
 
@@ -35,7 +37,6 @@ export const Chat = props => {
 
   useEffect(() => {
     const audio = new Audio(notificationSound);
-    const lastMessage = messages[messages.length - 1];
 
     if (lastMessage && lastMessage.user !== auth.currentUser.displayName) {
       setHasNewMessage(true);
@@ -82,13 +83,18 @@ export const Chat = props => {
 
       <div ref={messagesRef} className='messages'>
         {messages.map(message => (
-          <p className='Chat__message'>
+          <p
+            key={message.id}
+            className={`Chat__message ${
+              message.user !== "Guest" && message.user === auth.currentUser.displayName && !isAnonymousAuth ? "flex-end" : ""
+            }`}
+          >
             {message.profilePicture ? (
               <img className='profile__picture' referrerpolicy='no-referrer' src={message.profilePicture} alt={message.user} />
             ) : (
               <img className='profile__picture' src={DefaultProfilePicture} alt={message.user}></img>
             )}
-            {message.user} : {message.text}
+            {message.user || "Guest"} : {message.text}
           </p>
         ))}
       </div>

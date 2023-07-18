@@ -12,7 +12,8 @@
 }
 
 .signin__google {
-  margin-top: 2rem;
+  width: 10rem;
+  margin-bottom: 1rem;
   display: inline-block;
   padding: 0.35em 1.2em;
   border: 0.1em solid #ffffff;

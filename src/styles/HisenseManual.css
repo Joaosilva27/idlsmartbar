@@ -1,0 +1,17 @@
+.div__center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.div__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3rem;
+}
+
+.card__tv__image {
+  width: 15rem;
+}

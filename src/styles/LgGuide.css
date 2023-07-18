@@ -19,15 +19,15 @@ h2 {
 
 li {
   color: #ef3342;
+  margin-bottom: 0.5rem;
 }
 
 .li__color {
   color: white;
-  text-decoration: underline;
 }
 
 .p__container {
-  line-height: 2.5rem;
+  line-height: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,6 +62,8 @@ li {
   height: 6rem;
   cursor: pointer;
   background: transparent;
+  background: #1b171c;
+
   border: 2px solid #1b171c;
   outline: none;
   transition: 1s ease-in-out;
@@ -79,4 +81,25 @@ li {
 
 .animation:hover {
   transform: scale(1.3);
+}
+
+.back__arrow {
+  width: 2rem;
+  color: white;
+}
+
+.back__container {
+  position: absolute;
+}
+
+.back__button {
+  border-radius: 5px;
+  width: 6rem;
+  height: 60px;
+  cursor: pointer;
+  background: transparent;
+  border: 2px solid #1b171c;
+  outline: none;
+  transition: 1s ease-in-out;
+  color: #ef3342;
 }

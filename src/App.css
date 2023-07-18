@@ -95,6 +95,7 @@ element::-webkit-scrollbar {
 .tv__guide {
   display: flex;
   align-items: center;
+  justify-content: center;
   text-align: center;
   font-size: 0.9rem;
   border-radius: 5px;
@@ -158,6 +159,10 @@ element::-webkit-scrollbar {
   display: inline-block;
   margin-right: 5px;
   margin-left: 1rem;
+}
+
+.note {
+  color: #ffd700;
 }
 
 h3 {
