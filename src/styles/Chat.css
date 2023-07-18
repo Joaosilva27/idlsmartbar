@@ -53,6 +53,7 @@ body {
 }
 
 .new__message__form {
+  display: flex;
   margin-top: 2rem;
   bottom: 1.5rem;
 }
@@ -122,4 +123,24 @@ body {
 
 .flex-end {
   align-self: flex-end;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-image {
+  max-width: 90%;
+  max-height: 90%;
+  display: block;
+  margin: auto;
 }

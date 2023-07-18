@@ -1,11 +1,14 @@
 import { useEffect, useState, useRef } from "react";
 import { addDoc, collection, serverTimestamp, onSnapshot, query, where, orderBy } from "firebase/firestore";
 import { auth, db } from "../firebase-config";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import "../styles/Chat.css";
 import notificationSound from "../sounds/message_sound.mp3";
 import addNotification from "react-push-notification";
 import DefaultProfilePicture from "../images/default_pfp.jpeg";
 import attachmentIcon from "../images/attachment.png";
+
+// afnaoijfof aoifjao af
 
 export const Chat = props => {
   const { room } = props;
@@ -14,6 +17,9 @@ export const Chat = props => {
   const [messages, setMessages] = useState([]);
   const [hasNewMessage, setHasNewMessage] = useState(false);
   const lastMessage = messages[messages.length - 1];
+  const storage = getStorage();
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const messagesRef = useRef(null);
 
@@ -58,20 +64,45 @@ export const Chat = props => {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    if (newMessage === "") return;
+    if (newMessage === "" && !selectedImage) return;
 
     const currentUser = auth.currentUser;
 
-    await addDoc(collection(db, "messages"), {
-      text: newMessage,
-      createdAt: serverTimestamp(),
-      user: currentUser.displayName,
-      profilePicture: currentUser.photoURL,
-      room,
-    });
+    if (selectedImage) {
+      const storageRef = ref(storage, `images/${selectedImage.name}`);
+      await uploadBytes(storageRef, selectedImage);
+      const imageUrl = await getDownloadURL(storageRef);
 
-    setNewMessage("");
-    setHasNewMessage(false);
+      await addDoc(collection(db, "messages"), {
+        image: imageUrl,
+        createdAt: serverTimestamp(),
+        user: currentUser.displayName,
+        profilePicture: currentUser.photoURL,
+        room,
+      });
+
+      setSelectedImage(null);
+    } else {
+      await addDoc(collection(db, "messages"), {
+        text: newMessage,
+        createdAt: serverTimestamp(),
+        user: currentUser.displayName,
+        profilePicture: currentUser.photoURL,
+        room,
+      });
+
+      setNewMessage("");
+      setHasNewMessage(false);
+    }
+  };
+
+  function toggleModal(open) {
+    setModalOpen(open);
+  }
+
+  const handleImageSelect = e => {
+    const file = e.target.files[0];
+    setSelectedImage(file);
   };
 
   return (
@@ -96,6 +127,22 @@ export const Chat = props => {
               <img className='profile__picture' src={DefaultProfilePicture} alt={message.user}></img>
             )}
             {message.user || "Guest"} : {message.text}
+            {message.image && (
+              <>
+                <img
+                  src={message.image}
+                  alt={message.user}
+                  className='h-64 ml-2 object-contain cursor-pointer'
+                  onClick={() => setSelectedImage(message.image)}
+                />
+
+                {selectedImage && (
+                  <div className='modal-overlay' onClick={() => setSelectedImage(null)}>
+                    <img src={selectedImage} alt={message.user} className='modal-image' />
+                  </div>
+                )}
+              </>
+            )}
           </p>
         ))}
       </div>
@@ -111,6 +158,12 @@ export const Chat = props => {
           <button type='submit' className='signOut--sendMessage__button'>
             Send
           </button>
+          <div className='input-container flex justify-center items-center rounded-md w-24 border-2 border-gray-900 outline-none'>
+            <label htmlFor='imageInput' className='file-input-label'>
+              <img src={attachmentIcon} className='h-8' alt='Attachment' />
+              <input type='file' id='imageInput' accept='image/*' onChange={handleImageSelect} className='hidden' />
+            </label>
+          </div>
         </form>
       </div>
     </div>
