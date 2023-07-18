@@ -36,6 +36,7 @@ import { PhillipsManualOled } from "./components/PhillipsManualOled";
 import { OkGuideManual } from "./components/OkGuideManual";
 import { TclGuideManual } from "./components/TclGuideManual";
 import { PhillipsGuide8007 } from "./components/PhillipsGuide8007";
+import { SamsungGuideManualShort } from "./components/SamsungGuideManualShort";
 const cookies = new Cookies();
 
 function App() {
@@ -147,10 +148,12 @@ function App() {
         </div>
         {location.pathname !== "/" && (
           <button onClick={onHandleGoBack} className=' back__container back__button'>
-            <span>
-              <img className='back__arrow' src={backArrow} alt='Arrow Icon' />
-              <p className='back__p'>Back</p>
-            </span>
+            <div className='flex items-center justify-center'>
+              <span>
+                <img className='back__arrow' src={backArrow} alt='Arrow Icon' />
+                <p className='back__p'>Back</p>
+              </span>
+            </div>
           </button>
         )}
       </div>
@@ -234,6 +237,7 @@ function App() {
         <Route path='/calibration-guide/manual-guide' element={<ManualGuide />} />
         <Route path='calibration-guide/automatic-guide' element={<AutomaticGuide />} />
         <Route path='calibration-guide/samsung' element={<SamsungGuide />} />
+        <Route path='calibration-guide/samsung/manual/short' element={<SamsungGuideManualShort />} />
         <Route path='calibration-guide/lg' element={<LgGuide />} />
         <Route path='calibration-guide/lg/full-guide' element={<LgFullGuide />} />
         <Route path='calibration-guide/sony' element={<SonyGuide />} />

@@ -34,8 +34,14 @@ export const SamsungGuide = () => {
                     </Link>
 
                     <button style={{ color: "white" }} className='button__guides animation'>
-                      Manual Guide
+                      Full Manual Guide
                     </button>
+
+                    <Link to='/calibration-guide/samsung/manual/short'>
+                      <button style={{ color: "white" }} className='button__guides animation'>
+                        Short Manual Guide
+                      </button>
+                    </Link>
                   </div>
                   <div className='row__h4'>
                     <PdfDownloader fileName='Samsung Report Example' fileUrl={SamsungReport} />

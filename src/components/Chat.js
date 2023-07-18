@@ -5,6 +5,7 @@ import "../styles/Chat.css";
 import notificationSound from "../sounds/message_sound.mp3";
 import addNotification from "react-push-notification";
 import DefaultProfilePicture from "../images/default_pfp.jpeg";
+import attachmentIcon from "../images/attachment.png";
 
 export const Chat = props => {
   const { room } = props;

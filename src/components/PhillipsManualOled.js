@@ -74,8 +74,8 @@ export const PhillipsManualOled = () => {
                   measuring/setting the 'Gamma'.
                   <br></br>
                   <br></br>
-                  &#40;<span className='note'>OPTIONAL NOTE1:</span> For a graph with easier readability, right click on the Gamma graph in the Calman
-                  program &#8594; 'Properties' and on the first option 'Chart Type' select 'Gamma Point'.&#41;
+                  &#40;<span className='note'>TIP:</span> For a graph with easier readability, right click on the Gamma graph in the Calman program
+                  &#8594; 'Properties' and on the first option 'Chart Type' select 'Gamma Point'.&#41;
                 </span>
               </li>
               <br></br>
