@@ -1,8 +1,10 @@
 .div__center {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   height: 70vh;
+  width: 100%;
 }
 
 .div__card {

@@ -8,7 +8,7 @@ import addNotification from "react-push-notification";
 import DefaultProfilePicture from "../images/default_pfp.jpeg";
 import attachmentIcon from "../images/attachment.png";
 
-// afnaoijfof aoifjao af
+// aoiufhjaiufhia
 
 export const Chat = props => {
   const { room } = props;
@@ -18,7 +18,8 @@ export const Chat = props => {
   const [hasNewMessage, setHasNewMessage] = useState(false);
   const lastMessage = messages[messages.length - 1];
   const storage = getStorage();
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImages, setSelectedImages] = useState([]);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(null); // New state variable
   const [modalOpen, setModalOpen] = useState(false);
 
   const messagesRef = useRef(null);
@@ -64,45 +65,68 @@ export const Chat = props => {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    if (newMessage === "" && !selectedImage) return;
+    if (newMessage === "" && selectedImages.length === 0) return;
 
     const currentUser = auth.currentUser;
 
-    if (selectedImage) {
-      const storageRef = ref(storage, `images/${selectedImage.name}`);
-      await uploadBytes(storageRef, selectedImage);
-      const imageUrl = await getDownloadURL(storageRef);
+    if (selectedImages.length > 0) {
+      try {
+        const imageUrls = [];
 
-      await addDoc(collection(db, "messages"), {
-        image: imageUrl,
-        createdAt: serverTimestamp(),
-        user: currentUser.displayName,
-        profilePicture: currentUser.photoURL,
-        room,
-      });
+        for (let i = 0; i < selectedImages.length; i++) {
+          const file = selectedImages[i];
+          const uniqueFileName = `${file.name}_${Date.now()}`;
+          const storageRef = ref(storage, `images/${uniqueFileName}`);
+          await uploadBytes(storageRef, file);
+          const imageUrl = await getDownloadURL(storageRef);
+          imageUrls.push(imageUrl);
+        }
 
-      setSelectedImage(null);
+        await addDoc(collection(db, "messages"), {
+          images: imageUrls,
+          createdAt: serverTimestamp(),
+          user: currentUser.displayName,
+          profilePicture: currentUser.photoURL,
+          room,
+        });
+
+        setSelectedImages([]);
+      } catch (error) {
+        console.log(error);
+        // Handle the error case
+      }
     } else {
-      await addDoc(collection(db, "messages"), {
-        text: newMessage,
-        createdAt: serverTimestamp(),
-        user: currentUser.displayName,
-        profilePicture: currentUser.photoURL,
-        room,
-      });
+      try {
+        await addDoc(collection(db, "messages"), {
+          text: newMessage,
+          createdAt: serverTimestamp(),
+          user: currentUser.displayName,
+          profilePicture: currentUser.photoURL,
+          room,
+        });
 
-      setNewMessage("");
-      setHasNewMessage(false);
+        setNewMessage("");
+        setHasNewMessage(false);
+      } catch (error) {
+        console.log(error);
+        // Handle the error case
+      }
     }
   };
 
-  function toggleModal(open) {
-    setModalOpen(open);
-  }
-
   const handleImageSelect = e => {
-    const file = e.target.files[0];
-    setSelectedImage(file);
+    const fileList = Array.from(e.target.files); // Convert FileList to an array
+    setSelectedImages(fileList);
+  };
+
+  const handleImageClick = index => {
+    setSelectedImageIndex(index);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setSelectedImageIndex(null);
+    setModalOpen(false);
   };
 
   return (
@@ -124,28 +148,23 @@ export const Chat = props => {
             {message.profilePicture ? (
               <img className='profile__picture' referrerpolicy='no-referrer' src={message.profilePicture} alt={message.user} />
             ) : (
-              <img className='profile__picture' src={DefaultProfilePicture} alt={message.user}></img>
+              <img className='profile__picture' src={DefaultProfilePicture} alt={message.user} />
             )}
-            {message.user || "Guest"} : {message.text}
-            {message.image && (
-              <>
-                <img
-                  src={message.image}
-                  alt={message.user}
-                  className='h-64 ml-2 object-contain cursor-pointer'
-                  onClick={() => setSelectedImage(message.image)}
-                />
-
-                {selectedImage && (
-                  <div className='modal-overlay' onClick={() => setSelectedImage(null)}>
-                    <img src={selectedImage} alt={message.user} className='modal-image' />
-                  </div>
-                )}
-              </>
-            )}
+            {message.user || "Guest"}: {message.text}
+            {message.images &&
+              message.images.map((imageUrl, index) => (
+                <img key={index} src={imageUrl} alt={message.user} className='chat-image' onClick={() => handleImageClick(index)} />
+              ))}
           </p>
         ))}
       </div>
+
+      {modalOpen && selectedImageIndex !== null && (
+        <div className='modal-overlay' onClick={closeModal}>
+          <img src={messages[selectedImageIndex].images[selectedImageIndex]} alt={messages[selectedImageIndex].user} className='modal-image' />
+        </div>
+      )}
+
       <div className='send__message__container'>
         <form onSubmit={handleSubmit} className='new__message__form'>
           <input
@@ -156,12 +175,19 @@ export const Chat = props => {
             value={newMessage}
           />
           <button type='submit' className='signOut--sendMessage__button'>
-            Send
+            {selectedImages.length > 0 ? "Send Images" : "Send"}
           </button>
-          <div className='input-container flex justify-center items-center rounded-md w-24 border-2 border-gray-900 outline-none'>
+          <div className='input-container'>
             <label htmlFor='imageInput' className='file-input-label'>
-              <img src={attachmentIcon} className='h-8' alt='Attachment' />
-              <input type='file' id='imageInput' accept='image/*' onChange={handleImageSelect} className='hidden' />
+              <img src={attachmentIcon} style={{ height: "2rem", marginTop: "0.3rem" }} alt='Attachment' />
+              <input
+                type='file'
+                id='imageInput'
+                accept='image/*'
+                onChange={handleImageSelect}
+                className='hidden'
+                multiple // Add this attribute to allow multiple image selection
+              />
             </label>
           </div>
         </form>

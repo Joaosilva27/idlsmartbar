@@ -125,6 +125,28 @@ body {
   align-self: flex-end;
 }
 
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.375rem; /* Equivalent to rounded-md */
+  width: 6rem; /* Equivalent to w-24 */
+  border: 2px solid black; /* Equivalent to border-2 border-gray-900 */
+  outline: none; /* Equivalent to outline-none */
+}
+
+.hidden {
+  display: none;
+}
+
+.chat-image {
+  height: 16rem; /* Equivalent to h-64 */
+  margin-left: 0.5rem; /* Equivalent to ml-2 */
+  object-fit: contain; /* Equivalent to object-contain */
+  cursor: pointer; /* Equivalent to cursor-pointer */
+  border-radius: 1rem;
+}
+
 .modal-overlay {
   position: fixed;
   top: 0;

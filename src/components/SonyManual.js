@@ -10,7 +10,7 @@ export const SonyManual = () => {
       <div style={{ marginTop: "1rem" }}>
         <div className='p__container'>
           <div className='short__guide__container'>
-            <ol>
+            <ol className='list-decimal'>
               <li>
                 <span className='li__color'>
                   Start off by following the same steps as the Automatic Calibration until the step where we edit and select all HDMI inputs

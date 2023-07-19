@@ -51,7 +51,9 @@ export const Auth = props => {
       <div className='auth__flex--row'>
         <img alt='Logo for IDLogistics' className='Logo' src={IDLogo} />
         <img alt='TV Icon' className='Logo' src={TVicon} />
-        <h1 style={{ color: "#1b171c", marginTop: "0.3rem" }}>Smartbar</h1>
+        <h1 className='text-4xl mb-4' style={{ color: "#1b171c", marginTop: "0.3rem" }}>
+          Smartbar
+        </h1>
       </div>
       <button className='signin__google' onClick={signInWithGoogle}>
         Sign In With Google

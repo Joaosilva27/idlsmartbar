@@ -10,7 +10,7 @@ export const HisenseE7 = () => {
       <div style={{ marginTop: "1rem" }}>
         <div className='p__container'>
           <div className='short__guide__container'>
-            <ol>
+            <ol className='list-decimal'>
               <li>
                 <span className='li__color'>Start off by selecting the Language as either English or Dutch. </span>
               </li>

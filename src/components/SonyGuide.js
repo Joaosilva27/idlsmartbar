@@ -57,7 +57,7 @@ export const SonyGuide = () => {
           <div style={{ marginTop: "1rem" }}>
             <div className='p__container'>
               <div className='short__guide__container'>
-                <ol>
+                <ol className='list-decimal'>
                   <li>
                     <span className='li__color'>Turn on the TV and select English or Dutch as the language.</span>
                   </li>

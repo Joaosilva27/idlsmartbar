@@ -1,5 +1,6 @@
 import React from "react";
 import PdfDownloader from "./PdfDownloader";
+import "../styles/SamsungGuide.css";
 import SamsungReport from "../documents/Samsung_Report.pdf";
 import SamsungTemplate from "../documents/Samsung_Template.docx";
 import SamsungManualBox from "../images/samsungbox.jpeg";
@@ -11,7 +12,7 @@ export const SamsungGuideManualShort = () => {
       <div style={{ marginTop: "1rem" }}>
         <div className='p__container'>
           <div className='short__guide__container'>
-            <ol>
+            <ol className='list-decimal'>
               <li>
                 <span className='li__color'>Start off by filling in all the info in the Calman program and finishing the TV setup.</span>
                 <br></br>

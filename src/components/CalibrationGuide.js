@@ -15,7 +15,7 @@ function CalibrationGuide() {
     <div>
       <div className='guide__container'>
         <span style={{ display: "flex" }}>
-          <h1 className='color__black'>TV Calibration Guide</h1>
+          <h1 className='color__black text-5xl'>TV Calibration Guide</h1>
           <img alt='TV Icon' style={{ marginLeft: "0.5rem" }} className='tv__icon' src={ControllerIcon} />
         </span>
         <h5 style={{ color: "#ef3342" }}>Written by Konstantyn & João</h5>

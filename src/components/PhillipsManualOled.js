@@ -11,7 +11,7 @@ export const PhillipsManualOled = () => {
       <div style={{ marginTop: "1rem" }}>
         <div className='p__container'>
           <div className='short__guide__container'>
-            <ol>
+            <ol className='list-decimal'>
               <li>
                 <span className='li__color'>
                   Follow the identical steps as for the Automatic Calibration up until the point where we navigate to HDMI1 &#40;Short Guide: Step

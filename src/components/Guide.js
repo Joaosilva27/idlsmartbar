@@ -16,29 +16,29 @@ export const Guide = () => {
       </div>
       <div className='grid__box'>
         <div className='guide__container--center grid--1'>
-          <div style={{ display: "flex" }}>
+          <div style={{ display: "flex" }} className='items-center'>
             <img alt='TV Icon' className='guide__tv--icon' src={TvIcon} />
             <Link style={{ textDecoration: "none" }} to='/calibration-guide'>
-              <h1 className='guide__tv--h1'>Television Guide</h1>
+              <h1 className='guide__tv--h1 text-4xl mb-6'>Television Guide</h1>
             </Link>
           </div>
         </div>
         <div className='guide__container--center grid--2'>
-          <div style={{ display: "flex" }}>
+          <div style={{ display: "flex" }} className='items-center'>
             <img alt='Phone Icon' className='guide__phone--icon' src={PhoneIcon} />
-            <h1 className='guide__phone--h1'>Screen Foil Guide</h1>
+            <h1 className='guide__phone--h1 text-4xl mb-6'>Screen Foil Guide</h1>
           </div>
         </div>
         <div className='guide__container--center grid--1'>
-          <div style={{ display: "flex" }}>
+          <div style={{ display: "flex" }} className='items-center'>
             <img alt='Phone Icon' className='guide__abonnement--icon' src={AbonnementIcon} />
-            <h1 className='guide__phone--h1'>Abonnement Guide</h1>
+            <h1 className='guide__phone--h1 text-4xl mb-6'>Abonnement Guide</h1>
           </div>
         </div>
         <div className='guide__container--center grid--2'>
-          <div style={{ display: "flex" }}>
+          <div style={{ display: "flex" }} className='items-center'>
             <img alt='Phone Icon' className='guide__laptop--icon' src={LaptopIcon} />
-            <h1 className='guide__phone--h1'>Laptop Guide</h1>
+            <h1 className='guide__phone--h1 text-4xl mb-6'>Laptop Guide</h1>
           </div>
         </div>
       </div>

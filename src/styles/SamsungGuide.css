@@ -34,3 +34,7 @@ li {
   width: 30rem;
   margin-left: 3rem;
 }
+
+.list-decimal {
+  list-style-type: decimal;
+}

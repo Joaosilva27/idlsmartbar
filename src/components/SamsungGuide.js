@@ -64,7 +64,7 @@ export const SamsungGuide = () => {
           <h2 style={{ textAlign: "center" }}>Short Guide</h2>
           <div style={{ marginTop: "1rem" }}>
             <div className='p__container'>
-              <ol>
+              <ol className='list-decimal'>
                 <li>
                   <span className='li__color'>Turn on the TV and go through all the steps until network connection.</span>
                 </li>

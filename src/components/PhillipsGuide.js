@@ -57,7 +57,7 @@ export const PhillipsGuide = () => {
           <div style={{ marginTop: "1rem" }}>
             <div className='p__container'>
               <div className='short__guide__container'>
-                <ol>
+                <ol className='list-decimal'>
                   <li>
                     <span className='li__color'>
                       The Phillips TV has a different step than any other TV, we connect the HDMI cable, the power cable, but we will only connect the

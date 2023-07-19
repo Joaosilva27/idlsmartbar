@@ -51,6 +51,10 @@ element::-webkit-scrollbar {
   font-weight: bold;
 }
 
+.li__color {
+  color: white;
+}
+
 .App__input {
   margin-top: 1rem;
   outline: none;

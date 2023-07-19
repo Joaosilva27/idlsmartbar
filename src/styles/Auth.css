@@ -42,6 +42,7 @@
 }
 
 .auth__flex--row {
+  align-items: center;
   display: flex;
   margin-bottom: 5rem;
 }

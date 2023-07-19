@@ -203,7 +203,7 @@ function App() {
                         <div className='room__flex'>
                           {mostVisitedRooms.map(room => (
                             <div key={room.id} className='room__row'>
-                              <h4>{room.id}</h4>
+                              <h4 className='mt-6'>{room.id}</h4>
                               <button
                                 className='App__button room__button'
                                 onClick={() => {
