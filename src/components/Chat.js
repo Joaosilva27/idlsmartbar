@@ -8,8 +8,6 @@ import addNotification from "react-push-notification";
 import DefaultProfilePicture from "../images/default_pfp.jpeg";
 import attachmentIcon from "../images/attachment.png";
 
-// aoiufhjaiufhia
-
 export const Chat = props => {
   const { room } = props;
   const { isAnonymousAuth } = props;
@@ -19,7 +17,7 @@ export const Chat = props => {
   const lastMessage = messages[messages.length - 1];
   const storage = getStorage();
   const [selectedImages, setSelectedImages] = useState([]);
-  const [selectedImageIndex, setSelectedImageIndex] = useState(null); // New state variable
+  const [selectedImageIndex, setSelectedImageIndex] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
 
   const messagesRef = useRef(null);
@@ -93,7 +91,6 @@ export const Chat = props => {
         setSelectedImages([]);
       } catch (error) {
         console.log(error);
-        // Handle the error case
       }
     } else {
       try {
@@ -109,13 +106,12 @@ export const Chat = props => {
         setHasNewMessage(false);
       } catch (error) {
         console.log(error);
-        // Handle the error case
       }
     }
   };
 
   const handleImageSelect = e => {
-    const fileList = Array.from(e.target.files); // Convert FileList to an array
+    const fileList = Array.from(e.target.files);
     setSelectedImages(fileList);
   };
 
@@ -138,7 +134,7 @@ export const Chat = props => {
       </div>
 
       <div ref={messagesRef} className='messages'>
-        {messages.map(message => (
+        {messages.map((message, index) => (
           <p
             key={message.id}
             className={`Chat__message ${
@@ -153,15 +149,23 @@ export const Chat = props => {
             {message.user || "Guest"}: {message.text}
             {message.images &&
               message.images.map((imageUrl, index) => (
-                <img key={index} src={imageUrl} alt={message.user} className='chat-image' onClick={() => handleImageClick(index)} />
+                <img
+                  key={index}
+                  src={imageUrl}
+                  alt={message.user}
+                  className='chat-image'
+                  onClick={() => handleImageClick(messages.indexOf(message))}
+                />
               ))}
           </p>
         ))}
       </div>
 
-      {modalOpen && selectedImageIndex !== null && (
+      {modalOpen && selectedImageIndex !== null && messages[selectedImageIndex]?.images && (
         <div className='modal-overlay' onClick={closeModal}>
-          <img src={messages[selectedImageIndex].images[selectedImageIndex]} alt={messages[selectedImageIndex].user} className='modal-image' />
+          {messages[selectedImageIndex]?.images.map((imageUrl, index) => (
+            <img key={index} src={imageUrl} alt={messages[selectedImageIndex]?.user} className='modal-image' />
+          ))}
         </div>
       )}
 
@@ -175,19 +179,12 @@ export const Chat = props => {
             value={newMessage}
           />
           <button type='submit' className='signOut--sendMessage__button'>
-            {selectedImages.length > 0 ? "Send Images" : "Send"}
+            {selectedImages.length > 0 ? "Send Image" : "Send"}
           </button>
           <div className='input-container'>
             <label htmlFor='imageInput' className='file-input-label'>
               <img src={attachmentIcon} style={{ height: "2rem", marginTop: "0.3rem" }} alt='Attachment' />
-              <input
-                type='file'
-                id='imageInput'
-                accept='image/*'
-                onChange={handleImageSelect}
-                className='hidden'
-                multiple // Add this attribute to allow multiple image selection
-              />
+              <input type='file' id='imageInput' accept='image/*' onChange={handleImageSelect} className='hidden' multiple />
             </label>
           </div>
         </form>
