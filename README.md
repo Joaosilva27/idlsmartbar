@@ -1,6 +1,6 @@
 # ID Logistics Smartbar App 📺
 
-This project is available online at [idlsmartbar.nl](https://www.idlsmartbar.nl/). It was built and designed by me while working for "IDLogistics" as a TV calibrator.
+This project is available online at [idlsmartbar.nl](idlsmartbar.nl/). It was built and designed by me while working for "IDLogistics" as a TV calibrator.
 
 ![Screen Recording 2023-10-03 at 14 34 38 (online-video-cutter com) (4)](https://github.com/Joaosilva27/idlsmartbar/assets/94570140/dfdb426e-a06a-4f51-bfe6-d596da9a6458)
 
